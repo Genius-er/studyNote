@@ -1,0 +1,142 @@
+/*待办事项的*/
+#todosOut{
+	width:100%;
+	height:100%;
+	box-sizing:border-box;
+	padding-top: 115px;
+	overflow-y:hidden;
+	overflow-x:hidden;  
+}
+
+.todoInput{
+	display: block;
+	width:300px !important;
+	height:35px !important;
+	margin:20px auto 0px auto !important;
+	-webkit-transform:translate(3px);
+	border-radius: 35px !important;
+}
+
+.todoLabel{
+	-webkit-transform:translate(5px);
+	min-height:28px;
+}
+
+#todoType{
+	height:40px;
+	margin-top: 15px;
+
+}
+
+.todotype{
+	float:left;
+	width:auto;
+	margin-left: 83px;
+	font-size: 20px;
+	color:#95A5A6;
+	cursor: pointer;
+}
+.todotype:hover{
+	color:#7F8C8D;
+}
+
+.todotype label{
+	cursor: pointer;
+}
+#notdone{
+	margin-left: 92px;
+}
+#doneContent{
+	display: none;
+}
+
+.checkdone{
+	color:#ccc;
+	text-decoration: line-through;
+}
+
+.checktodo{
+	text-decoration: none;
+}
+
+@-webkit-keyframes allFadeIn{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.todoFadeIn{
+	-webkit-animation:allFadeIn 0.2s ease;
+}
+#todoTop{
+	position: absolute;
+	width:344px;
+	top:75px;
+	left:0px;
+}
+
+#cleardone{
+	font-size: 14px;
+	cursor: pointer;
+	color:#2ECC71;
+	margin-left: 26px;
+	display: none;
+}
+#cleardone:hover{
+	color:#27AE60;
+}
+#cleardone:active{
+	color:#2ECC71;
+}
+
+
+.toTop{
+	webkit-transition:all 0.2s ease;
+	padding-left: 3px;
+	padding-right: 3px;
+	width:18px;
+	height:18px;
+	position: absolute;
+	top:4px;
+	right:8px;
+	background-image: url(../../img/toTop.png);
+	background-size: 100%;
+	cursor: default;
+	-webkit-transform:scale(1.1);
+	display: none;
+}
+
+.toTop:hover{
+	-webkit-filter:brightness(1.05);
+	-webkit-transform:scale(1.5);
+}
+
+.todoDelete{
+	webkit-transition:all 0.2s ease;
+	width:18px;
+	height:18px;
+	position: absolute;
+	top:4px;
+	right:8px;
+	background-image: url(../../img/delete.png);
+	background-size: 100%;
+	cursor: default;
+	-webkit-transform:scale(1.1);
+	display: none;
+}
+.todoDelete:hover{
+	-webkit-filter:brightness(1.05);
+	-webkit-transform:scale(1.5);
+}
+.labelOut{
+	position: relative;
+	margin-top: 4px;
+	margin-bottom: 16px;
+	outline: solid 1px transparent;
+	min-height:28px;
+}
+
+#contentOut{
+	height: 100%;
+	width:100%;
+	overflow-y:scroll; 
+}

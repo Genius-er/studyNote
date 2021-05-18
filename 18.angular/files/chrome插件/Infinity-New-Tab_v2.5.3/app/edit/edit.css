@@ -1,0 +1,167 @@
+#EditBoxOut{
+	width:100%;
+	height:100%;
+	overflow-y: scroll !important;
+	overflow-x: hidden;
+}
+#EditaddUrl{
+	margin-top:20px;
+}
+
+#EditiconPreviewOut{
+	width:250px;
+	height:115px;
+	margin-top: 32px;
+	position: relative;
+}
+
+#EditiconPreviewTop{
+	width:300px;
+	height:300px;
+	border-radius: 240px;
+	position: relative;
+	overflow: hidden;
+	background-color: #1ABC9C;
+	zoom:0.35;
+	background-size: 40%;
+}
+#EditiconPreview{
+	position: absolute;
+	top:0px;
+	left:23px;
+	width:260px;
+	height:300px;
+	float: left;
+	color:#fdfdfd;
+	font-size: 90px;
+	text-align: center;
+	line-height: 300px;
+	background-size:100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+
+#EditpreviewName{
+	width:300px;
+	height:60px;
+	position: absolute;
+	color:#33C5C5;
+	left:0px;
+	bottom:-70px;
+	font-size: 42px;
+	text-align: center;
+	overflow: hidden;
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+	zoom:0.35;
+}
+
+#Editremove{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background-image: url(../../img/delete.png);
+	background-size: 100%;
+	top: 27px;
+	left: 106px;
+	display: none;
+	cursor: pointer;
+	-webkit-transition:all 0.15s ease;
+}
+#Editremove:hover{
+	-webkit-filter:brightness(1.1);
+}
+#Editremove:active{
+	-webkit-filter:brightness(1);
+}
+
+#EdituploadImage{
+	position: absolute;
+	width:110px;
+	right: 0px;
+	top: 30px;
+}
+
+
+#EditimageSize{
+	color:#2ECC71;
+	position: absolute;
+	right:0px;
+	bottom:32px;
+	font-size: 12px;
+	display: none;
+}
+
+#EditimgSize{
+	width:150px;
+	margin:0px;
+	zoom:0.8;
+	display:none;
+	position: absolute;
+	bottom: 25px;
+	right:0px;
+}
+
+
+#EditicoBgColor{
+	width:265px;
+	height:80px;
+	margin-top: 40px;
+}
+
+.EditicobgColor{
+	width:22px;
+	height:22px;
+	border-radius: 20px;
+	border:solid 2px transparent;
+	background-color: transparent;
+	padding: 2px;
+	background-clip: content-box;
+	cursor: pointer;
+	float: left;
+	margin-right:14px; 
+	margin-bottom: 10px;
+	-webkit-transition:all 0.15s ease;
+}
+.EditicobgColor:hover{
+	-webkit-transform:scale(1.2);
+}
+
+
+#EditColorPicker{
+	background-color: transparent;
+	background-image: url(../../img/color.png);
+	background-size: 100%;
+}
+
+#EdittransparentBg{
+	background-color: transparent;
+	background-image: url(../../img/transparent.png);
+	background-size: 100%;
+}
+
+
+#Editpicker{
+	width: 190px;
+	padding: 0px;
+	height: 150px;
+	margin-left: 30px;
+	display: none;
+}
+
+#EditBuOut{
+	z-index:100;
+	height:40px;
+	width:100%;
+	position: relative;
+}
+
+#EditBu{
+	margin-top:20px;
+	margin-left: 2px;
+	width: 258px;
+	display: block;
+	zoom:1;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则扩展-dotAll模式</title>
+</head>
+
+<body>
+    <script>
+        //dot  .  元字符  除换行符以外的任意单个字符
+        // dotAll模式，让dot匹配任意字符
+
+        let str = `
+        <ul>
+            <li>
+                <a>肖生克的救赎</a>
+                <p>上映日期: 1994-09-10</p>
+            </li>
+            <li>
+                <a>阿甘正传</a>
+                <p>上映日期: 1994-07-06</p>
+            </li>
+        </ul>`;
+        //声明正则
+        // 之前的方式
+        // const reg = /<li>\s+<a>(.*?)<\/a>\s+<p>(.*?)<\/p>/;
+        // const result = reg.exec(str);
+        // console.log(result)
+
+        // dotAll模式,方法：，模式修饰符s（换行符就不用\s）
+        const reg2 = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/gs;
+        //执行匹配
+        let result2;
+        let data = [];
+        while(result2 = reg2.exec(str)){
+            data.push({title: result2[1], time: result2[2]});
+        }
+        //输出结果
+        console.log(data);
+
+
+    </script>
+</body>
+
+</html>

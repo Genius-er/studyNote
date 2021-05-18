@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            /* 
+                拖拽box1元素
+                    - 拖拽流程
+                        1、按下鼠标开始拖拽
+                        2、鼠标移动拖拽元素
+                        3、鼠标松开，元素固定在当前位置
+             */
+
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+
+
+            box1.setCapture && box1.setCapture();
+
+            // 按下鼠标开始拖拽
+            box1.onmousedown = function(event){
+                event = event || window.event;
+                // div的偏移量 鼠标.clentX - 元素.offsetLeft
+                // div的偏移量 鼠标.clentY - 元素.offsetTop
+                var ol = event.clientX - box1.offsetLeft;
+                var ot = event.clientY - box1.offsetTop;
+
+                
+                // 为document绑定一个onmousemove事件
+                document.onmousemove = function(event){     
+                    event = event || window.event;
+                    // 鼠标移动拖拽元素
+                    // 获取鼠标的坐标
+                    var left = event.clientX - ol;
+                    var top = event.clientY - ot;
+
+                    // 修改box1的位置
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px";
+
+                };
+
+                
+                // 为document绑定一个onmouseup()
+                document.onmouseup = function(){
+                    // 鼠标松开，元素固定在当前位置
+                    document.onmousemove = null;
+
+                    // 取消document.onmouseup()
+                    document.onmouseup = null;
+
+                    box1.releaseCapture && box1.releaseCapture();
+                };
+
+                /* 
+                    当拖拽一个网页中的内容时，浏览器会默认区搜索引擎中搜索内容
+                        此时会导致拖拽功能的异常，这个时浏览器提供的默认行为
+                        如果不希望发生这个行为，则可以通过return false来取消默认行为
+
+                    但是这招对IE8不起作用
+                        用捕获解决setCapture()和releaseCapture()问题（这两个方法只有IE支持）
+                 */
+                return false;
+                
+            };
+            drag(box2);
+        };
+
+        // 提取拖拽元素的方法
+        /* 
+            参数：
+                obj
+         */
+        function drag(obj){
+            obj.setCapture && obj.setCapture();
+
+            // 按下鼠标开始拖拽
+            obj.onmousedown = function(event){
+                event = event || window.event;
+                // div的偏移量 鼠标.clentX - 元素.offsetLeft
+                // div的偏移量 鼠标.clentY - 元素.offsetTop
+                var ol = event.clientX - obj.offsetLeft;
+                var ot = event.clientY - obj.offsetTop;
+
+    
+            // 为document绑定一个onmousemove事件
+            document.onmousemove = function(event){     
+                event = event || window.event;
+                // 鼠标移动拖拽元素
+                // 获取鼠标的坐标
+                var left = event.clientX - ol;
+                var top = event.clientY - ot;
+
+                // 修改box1的位置
+                obj.style.left = left + "px";
+                obj.style.top = top + "px";
+
+            };
+
+    
+            // 为document绑定一个onmouseup()
+            document.onmouseup = function(){
+                // 鼠标松开，元素固定在当前位置
+                document.onmousemove = null;
+
+                // 取消document.onmouseup()
+                document.onmouseup = null;
+
+                obj.releaseCapture && obj.releaseCapture();
+            };
+
+            /* 
+                当拖拽一个网页中的内容时，浏览器会默认区搜索引擎中搜索内容
+                    此时会导致拖拽功能的异常，这个时浏览器提供的默认行为
+                    如果不希望发生这个行为，则可以通过return false来取消默认行为
+
+                但是这招对IE8不起作用
+                    用捕获解决setCapture()和releaseCapture()问题（这两个方法只有IE支持）
+            */
+            return false;
+            
+            };
+        }
+    </script>
+</head>
+<body>
+    我是一段文字
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

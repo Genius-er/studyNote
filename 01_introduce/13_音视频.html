@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        audio 标签用来向页面中引入外部音频文件
+            音频引入时，默认情况不允许用户自己控制播放停止
+            -controls 加入无值的属性controls则可以让用户控制
+            -autoplay 自动播放
+                -但目前来讲大部分浏览器都不会自动对音乐进行播放（防止音量很大，吓人），播放过一次刷新一次就会自动播放
+            -loop 音频循环播放
+
+            ie9以下不支持
+                解决方案：见下
+            
+     -->
+    <!-- <audio src="source/Jocelyn Pook,Russian Red - Loving Strangers.mp3" controls autoplay loop></audio> -->
+
+    <!-- 此方式解决audio不支持ie9以下浏览器 -->
+    <audio controls>
+        对不起，你的浏览器不支持播放音频！请升级浏览器！
+        <!-- 多个源为了解决，有些浏览器不支持格式，多个源不会同时使用，一般两种格式mp3和ogg -->
+        <source src="source/Jocelyn Pook,Russian Red - Loving Strangers.mp3">
+        <source src="source/Biscuits - i hate u i love u.mp3">
+    </audio>
+
+
+    <!-- 
+        %老版本%浏览器音频视频的引入，会自动播放 
+        type是文件类型
+    -->
+    <embed src="source/Jocelyn Pook,Russian Red - Loving Strangers.mp3" type="">
+
+
+    <!-- 兼容多种浏览器 -->
+    <audio controls>
+        <!-- 多个源为了解决，有些浏览器不支持格式，多个源不会同时使用，一般两种格式mp3和ogg -->
+        <source src="source/Jocelyn Pook,Russian Red - Loving Strangers.mp3">
+        <source src="source/Biscuits - i hate u i love u.mp3">
+          <!-- 兼容ie8 -->
+        <embed src="source/Jocelyn Pook,Russian Red - Loving Strangers.mp3" type="">
+    </audio>
+
+    <!-- 
+        用法跟audio一样
+     -->
+    <video controls>
+        <source src="source/55987b3ffadee0ad64f057ec3ea455d3.mp4">
+            <!-- 兼容ie8 -->
+        <embed src="source/55987b3ffadee0ad64f057ec3ea455d3.mp4" type="">
+    </video>
+
+    <!-- 
+        视频音频占用空间，一般不会放到服务器中
+        解决方案：
+            1、把音视频放到专门的托管服务器
+            2、直接上传自己的音视频到第三方播放器，然后直接复制通用代码到自己的页面（一般用iframe实现）
+     -->
+     <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=n0020yrnly7" allowFullScreen="true" height="800" width="900"></iframe>
+
+</body>
+</html>

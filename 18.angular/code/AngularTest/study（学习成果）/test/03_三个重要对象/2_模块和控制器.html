@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="MyController">
+  <input type="text" ng-model="name">
+  <p>员工名字1：{{name}}</p>
+
+</div>
+<div ng-controller="MyController2">
+  <input type="text" ng-model="name">
+  <p>员工名字2：{{name}}</p>
+</div>
+
+
+
+<script type="text/javascript" src="../../js/angular-1.5.5/angular.js"></script>
+<script type="text/javascript">
+  // console.log(angular);
+
+  //创建模块对象
+  /*var myModule = angular.module('myApp',[])
+
+  myModule.controller('MyController',function ($scope) {
+    $scope.name = '刘洁';
+  })
+  myModule.controller('MyController2',function ($scope) {
+    $scope.name = '王浩宏';
+  })*/
+
+  // 优化，链式调用
+  /*angular.module('myApp',[])
+          .controller('MyController',function ($scope) {//返回值是模块对象
+            $scope.name = '刘洁';
+          })
+          .controller('MyController2',function ($scope) {// 隐式声明依赖注入
+            $scope.name = '王浩宏';
+          })*/
+
+  // 以上代码有问题，参数一定要$scope
+  // js代码压缩后形参会用abcd字母代替
+  // 代码压缩的时候$scope会被abcd代替，angular解析不了
+  // 解决方案（开发中要写这种方式）
+  angular.module('myApp',[])
+          .controller('MyController',['$scope',function ($scope) {//返回值是模块对象
+            $scope.name = '刘洁';
+          }])
+          .controller('MyController2',['$scope',function ($scope) {
+            $scope.name = '王浩宏';
+          }])
+</script>
+
+</body>
+</html>

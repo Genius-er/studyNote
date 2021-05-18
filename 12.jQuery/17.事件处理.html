@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .out{
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+
+        .inner{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            top: 50px;
+        }
+
+        .div3{
+            position: absolute;
+            top: 250px;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="out">
+    外部div
+    <div class="inner">内部div</div>
+</div>
+
+<div class="div3">
+    <button id="btn1">取消绑定多有事件</button>
+    <button id="btn2">取消绑定mouseenter事件</button>
+    <button id="btn3">测试事件坐标</button>
+    <a href="http://www.baidu.com" id="test4">百度一些</a>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    /*$('.out').click(function () {
+        console.log('click out')
+    })*/
+    // （更通用）并不是所有事件有对应的绑定事件的方法
+    $('.out').on('click',function () {
+        console.log('click out by on')
+    })
+
+
+    //鼠标移入移出
+    //方式一
+    /*$('.inner')
+        .mouseenter(function () {//进入
+            console.log('进入')
+        })
+        .mouseleave(function () {
+            console.log('离开')
+        })*/
+    //方式二
+    /*$('.inner')
+        .on('mouseenter',function () {
+        console.log('进入 by on')
+        })
+        .on('mouseleave',function () {
+        console.log('离开 by on')
+        })*/
+    //方式三
+    $('.inner')
+        .hover(function () {
+            console.log('进入 by hover')
+        },function () {
+            console.log('离开 by hover')
+        })
+
+    //解除监听
+    $('#btn1').click(function () {
+        $('.inner').off()
+    })
+    $('#btn2').click(function () {
+        $('.inner').off('mouseenter')
+    })
+
+    //获得事件坐标
+    $('#btn3').click(function (event) {//event
+        console.log(event.offsetX,event.offsetY)
+        console.log(event.clientX,event.clientY)
+        console.log(event.pageX,event.pageY)
+    })
+
+    //取消事件冒泡
+    $('.inner').click(function (event) {
+        console.log('click in')
+        event.stopPropagation()
+    })
+
+    // 点击链接，如果时间为偶数不跳转(阻止默认行为)
+    $('#test4').click(function (event) {
+        if (Date.now()%2===0){
+            event.preventDefault()
+        }
+    })
+
+
+
+
+
+</script>
+
+</body>
+</html>

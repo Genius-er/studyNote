@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise.allSettled</title>
+</head>
+<body>
+    <script>
+        /*Promise.allSettled() 参数为Promise数组，返回为一个Promise对象，这个对象一定是成功的，对象的值是一个数组，
+        里面包含每一个Promise的status和值组成的对象*/
+
+        // 声明两个Promise对象
+        const p1 = new Promise(((resolve, reject) => {
+            setTimeout(()=>{
+                // resolve('商品数据 - 1')
+                reject('商品数据 - 1')
+            },1000)
+        }))
+        const p2 = new Promise(((resolve, reject) => {
+            setTimeout(()=>{
+                resolve('商品数据 - 2')
+            },1000)
+        }))
+
+        // 调用allSettled
+        console.log(Promise.allSettled([p1,p2]))
+
+        // Promise.all()差不多，只是返回的对象中，如果参数中的对象有一个失败则返回的对象也是失败
+        const res = Promise.all([p1,p2])
+        console.log(res)
+    </script>
+
+</body>
+</html>

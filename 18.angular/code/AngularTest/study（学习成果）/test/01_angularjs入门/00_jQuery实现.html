@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <input type="text" id="name">
+  <p>您输入的内容是：<span id="contentSpan"></span></p>
+<!--
+    单页面应用（SPA）：single page application
+    特点：
+        1、将所有的活动局限于一个页面
+        2、当页面中有部分数据发生变化不会去刷新整个页面，而是局部刷新
+        3、利用ajax技术，路由。
+-->
+
+<script type="text/javascript" src="../../js/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+  $(function () {// 与document.ready 文档加载完毕相同（资源还没加载进来），window.onload整个页面加载完毕
+    $('input').keyup(function () {
+      var value = $(this).val();
+      $('span').html(value)
+    })
+  });
+
+</script>
+</body>
+</html>

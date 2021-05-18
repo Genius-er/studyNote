@@ -1,0 +1,2 @@
+!function(){"use strict";console.log(function(){for(var n=arguments.length,r=new Array(n),e=0;e<n;e++)r[e]=arguments[e];return r.reduce(((n,r)=>n+r),0)}(1,2,3,4,5,6))}();
+//# sourceMappingURL=built.75cdae1c48.js.map

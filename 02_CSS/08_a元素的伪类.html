@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            1、访问过的链接
+            2、没访问过的链接
+        */
+
+        /* 
+        给没访问过的链接设置红色
+        :link 表示没访问过的链接
+            颜色的话只设置没访问过的
+            其他可以设置正常的超链接
+         */
+        /* a:link{
+            color: red;
+            font-size: 50px;
+        } */
+
+        /* 
+        :visited 表示访问过的链接
+
+        由于隐私的原因，所以:visited只能改颜色
+         */
+        /* a:visited{
+            color:orange;
+        } */
+
+        /* 
+            :hover 用来表示鼠标移入状态
+        */
+        /* a:hover{
+            font-size: 80px;
+        } */
+
+        /* 
+            :active 用来表示鼠标点点下
+        */
+        a:active{
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com/">访问过的baidu</a>
+    <br>
+    <br>
+    <a href="https://www.baidu123.com/">没访问过的baidu</a>
+</body>
+</html>

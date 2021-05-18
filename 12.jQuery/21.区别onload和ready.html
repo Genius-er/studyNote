@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>测试window.onload和$(document).ready()</h1>
+    <img id="logo" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1602944153412&di=7cd20a19403aed9246d693fecf2e6b82&imgtype=0&src=http%3A%2F%2Fnews.yxrb.net%2Fuploadfile%2F2019%2F0428%2F20190428054520414.jpg" alt="">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        /*onload只可以一个
+        * jQuery的ready可以多个*/
+
+        // 直接，不能得到外链信息，图片还没加载
+        console.log('直接',$('#logo').width())
+
+        // 所有都准备就绪，包括外链的图片也加载进来
+    window.onload = function () {
+            console.log('onload',$('#logo').width())
+        }
+
+        // jQuery简写
+        // DOM元素加载完成运行，但img的图片还没加载进来
+        $(function () {
+            console.log('ready',$('#logo').width())
+            //解决方式：给图片元素加监听
+            // 在jQuery中经常用来监视图片是否加载进来
+            $('#logo').load(function () {
+                console.log('img load',$('#logo').width())
+            })
+        })
+        // jQuery完整写法
+        /*$(document).ready(function () {
+
+        })*/
+
+    </script>
+
+</body>
+</html>

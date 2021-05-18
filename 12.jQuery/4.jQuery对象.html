@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <button>测试一</button>
+    <button>测试二</button>
+    <button id="btn3">测试三</button>
+    <button>测试四</button>
+
+    <script src="./js/jquery-1.11.3.js"></script>
+    <script>
+        /*
+        * 需求1、统计一共有多少个按钮
+        * 需求2、取出第二个button文本
+        * 需求3、输出所有button的文本
+        * 需求4、输出‘测试三’按钮是所有按钮中的第几个
+        * */
+        console.log($('button').size(),$('button').length)
+
+        console.log($('button')[1].innerHTML)
+
+        $('button').each(function (index,item) {
+            console.log(index,item.innerHTML,this)
+        })
+        $('button').each(function () {
+            console.log(this)
+        })
+
+        console.log($('#btn3').index())
+    </script>
+</body>
+</html>

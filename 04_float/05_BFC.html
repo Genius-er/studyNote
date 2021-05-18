@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+            /* float: left; */
+
+            /* 给父元素开启BFC，子元素的外边距就不会传给父元素，（注意是开启父元素的BFC） */
+            overflow: hidden;
+            
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* 开启了BFC，不被浮动的元素遮盖 */
+            overflow: hidden;
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box3"></div>
+    </div>
+    <div class="box2"></div>
+</body>
+</html>

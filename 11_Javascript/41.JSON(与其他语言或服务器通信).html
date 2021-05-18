@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            JSON
+                - JS对象只有JS自己认识，其他语言不认识
+                - JSON就是特殊格式的字符串，这个字符串可以被任意的语言识别
+                    并且可以转换为任意语言中的对象，JSON在开发中注意来数据的交互
+                - JSON
+                    - JavaScript Object Notation JS对象表示法
+                    - JSON和JS对象的格式一样，只不过JSON字符串中的属性名必须用双引号（单引号不行）
+                        其他的和JS语法一样
+                    JSON分类：
+                        1、对象{}
+                            var obj = '{"name":"孙悟空","age":18,"gender":"男"}';
+                        2、数组[]
+                            var obj = '[1,2,3,"hello",true]';
+                    
+                    JSON中允许的值：
+                        1、字符串
+                        2、数值
+                        3、布尔值
+                        4、null
+                        5、对象（里面的需要前四种）
+                        6、数组（里面的需要前四种）
+        */
+       var json = '{"name":"孙悟空","age":18,"gender":"男"}';
+       var arrJson = '[1,2,3,"hello",true]';
+
+
+       /* 
+            将JSON字符串转换为JS中的对象
+                在JS中，为我们提供了一个工具类JSON
+                这个对象可以帮助我们将一个JSON转换为JS对象，也可以将一个对象转换为json
+       */
+
+       /* 
+            json --> js对象
+                JSON.parse()
+                    - 可以将json转换为js对象
+                    - 他需要一个json字符串作为参数
+       */
+
+       var obj1 = JSON.parse(json);
+       var obj2 = JSON.parse(arrJson);
+
+
+       console.log(obj1);
+       console.log(obj2);
+
+       /* 
+            js对象 --> json
+                JSON.stringify()
+                    - 可以将js对象转换为json
+                    - 他需要一个js对象字符串作为参数
+       */
+       console.log(typeof JSON.stringify(obj1));
+       console.log(JSON.stringify(obj1));
+       console.log(JSON.stringify(obj2));
+
+       /* 
+        JSON在IE7及以下不支持
+            解决方式：
+                引入外部的js文件来处理
+                    直接加入一个创建一个JSON对象的js文件
+
+                eval()
+                    - 这个函数可以执行一段字符串形式的JS代码，并返回执行结果
+                    - 如果eval()执行的字符串中含有{}，它会将{}当成是代码块
+                        如果不希望将其当成代码块解析，则需要在字符串前后各加一个括号
+
+                    - eval()这个函数功能很强大，可以执行字符串js
+                        但在开发中尽量不要使用，首先执行性能比较差，然后它还具有安全隐患（用户穿而已字符串就坏了）
+       */
+      var str = "alert('字符串JS');"
+    //   eval(str);
+      var obj3 = eval("("+json+")");
+      console.log(obj3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

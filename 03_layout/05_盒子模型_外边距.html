@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: palevioletred;
+            border: 10px red solid;
+
+            /* 
+                外边距（margin）
+                    -外边距不会影响盒子可见框的大小
+                    -但是外边距会影响盒子的位置
+                    -一共由四个方向
+                        -可以设置正值也可以是一个负值
+                    -设置左和上外边距会移动自己
+                        设置下和右是移动其他元素
+             */
+             margin-top: 100px;
+             margin-left: 200px;
+             margin: 100px 200px 350px 400px;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color:seagreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

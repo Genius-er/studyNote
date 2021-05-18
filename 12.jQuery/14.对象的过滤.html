@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>AAAAA</li>
+        <li title="hello" class="box2">BBBBBB</li>
+        <li class="box">CCCCCC</li>
+        <li title="hello">DDDDDDDD</li>
+        <li title="two"><span>BBBBBB</span></li>
+    </ul>
+    <li>eeeee</li>
+    <li>EEEEE</li>
+    <br>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        var $lis = $('ul>li');
+        /*
+        * 过滤和查找返回的jQuery对象
+        * 但用[index]返回的是DOM对象*/
+        // console.log($lis.first().html())
+        // console.log($lis.last().html())
+        // console.log($lis.eq(1).html())
+        // $lis.filter('[title="hello"]').css('background','red')
+        // $lis.filter('[title!="hello"]').css('background','red')
+        // $lis.filter('[title][title!="hello"]').css('background','red')
+        // $lis.not('[title="hello"]').css('background','red')
+        $lis.has('span').css('background','red')
+
+
+
+    </script>
+</body>
+</html>

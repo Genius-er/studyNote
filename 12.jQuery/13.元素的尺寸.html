@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 150px;
+            background: red;
+            padding: 10px;
+            border: 10px #fbd850 solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>div</div>
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        var $div = $('div');
+
+        console.log($div.width(),$div.height())
+
+        //width+paddingheight+padding
+        console.log($div.innerWidth(),$div.innerHeight())
+        /*
+        * outerWidth(false/true)
+        * outerHeight(false/true)
+        *   如果false（默认），height+padding+border
+        *   如果为true，则再加上margin
+        *
+        * */
+        console.log($div.outerWidth(),$div.outerHeight())
+        console.log($div.outerWidth(true),$div.outerHeight(true))
+    </script>
+
+</body>
+</html>

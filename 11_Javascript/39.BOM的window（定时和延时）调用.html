@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function(){
+            /* 
+                window的方法：
+                    - 定时调用
+                        setInterval()
+                            - 定时调用
+                            - 参数：
+                                1、回调函数，该函数每隔一段时间被调用一次
+                                2、每次调用间隔的时间，单位为毫秒
+                            - 返回值：
+                                返回一个Number类型的数据
+                                    这个数值作为定时器的唯一标识
+
+                            -但创建定时器时要清除之前的定时器关闭
+                                例如：把定时器放在onclick中，每点一次会创建定时器
+                        clearInterval()
+                            - 关闭定时器
+                            -方法中需要一个定时器的表示作为参数，这样将关闭标识对应的定时器
+                            - 参数：
+                                要关闭定时器的返回值（唯一标识）
+                                如果不是一个有效标识，则什么也不做也不会报错
+
+                    -延时调用
+                        setTimeout()
+                            -开启延时调用
+                            - 不马上执行，而是隔一段事件以后执行，而且只会执行一次（例如广告几秒钟关闭的应用）
+                        clearTimeout()
+                            -关闭延时调用
+
+                    定时调用和延时调用可以互相代替（定时调用一次就是延时调用）
+
+                定时调用
+                    让一段程序可以每隔一段时间执行一次
+
+                键盘事件中为误操作设计的一二卡顿不连贯问题
+                    把卡顿的这个行为放进定时调用的回调函数中就可以解决
+             */
+            /* 
+                让数值按指定速率加1
+             */
+            var num = 1;
+            var count = document.getElementById("count");
+
+            // 定时调用的测试
+            var timer = setInterval(() => {
+                count.innerHTML = num++;
+                if(num == 11){
+                    clearInterval(timer);
+                }
+            }, 500);
+
+
+        };
+    </script>
+</head>
+<body>
+    <h1 id="count">1</h1>
+</body>
+</html>

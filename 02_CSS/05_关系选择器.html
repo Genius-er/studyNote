@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            父元素
+            子元素
+            祖先元素
+            后代元素
+            兄弟元素
+        */
+
+        /* 
+            为div的子元素soan设置一个字体颜色红色
+
+            子元素选择器
+                语法：父元素>子元素
+        */
+        /* div>span{
+            color:red;
+        } */
+
+        /* 
+            后代元素选择器
+                作用：选择指定元素的所有后代
+                语法：祖先 后代
+        */
+        /* div span{
+            color: red;
+        } */
+
+        /* 
+            选择下一个兄弟
+                语法：前一个+下一个
+        */
+        /* p + span{
+            color: red;
+        } */
+
+        /* 
+            选择下面的所有兄弟
+                语法：前一个~下一个
+        */
+        /* p ~ span{
+            color: red;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <div>
+        我是一个div
+        <p>
+            我是div中的p
+            <span>我是p中的span</span>
+        </p>
+        <span>我是div中的span</span>
+        <span>我是div中的span2</span>
+    </div>
+</body>
+</html>

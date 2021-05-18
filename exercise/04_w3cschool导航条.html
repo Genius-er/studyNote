@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w3cschool导航条</title>
+
+    <link rel="stylesheet" href="../03_layout/css/reset.css">
+
+    <style>
+        /* .w3cschool_nav{
+            margin: 50px auto;
+            background-color: palevioletred;
+        }
+
+        li{
+            background-color: rgb(231, 231, 231);
+        }
+
+
+
+        
+        
+        a{
+            width: 166px;
+            height: 48px;
+            text-decoration: none;
+            float: left;
+            text-align: center;
+        }
+
+        .title{
+            float: left;
+        } */
+
+        .nav{
+            /* 设置宽度和高度 */
+            width: 1210px;
+            height: 48px;
+            /* 设置背景颜色 */
+            background-color: #e8e7e3;
+
+            margin: 100px auto;
+        }
+
+        /* 设置nav中的li */
+        .nav li{
+            /* 设置li向左浮动，以使菜单横向排列 */
+            float: left;
+            /* height: 100%; */
+
+            /* 将文字再父元素中垂直居中 */
+            line-height: 48px;
+
+            /* background-color: red; */
+
+        }
+
+        .nav a{
+            text-decoration: none;
+            color: #777777;
+            font-size: 18px;
+
+            /* 转换为块元素 */
+            display: block;
+
+            padding: 0 39px;
+
+        }
+
+        .nav li:last-child a{
+            padding: 0 43px 0 44px;
+        }
+
+        .nav a:hover{
+            background-color: #3f3f3f;
+            color: #e8e7e3;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <nav class="w3cshool_nav">
+        <!-- <div class="title"><a href="">HTML/CSS</a></div>
+        <div class="title"><a href="">Browser Side</a></div>
+        <div class="title"><a href="">Server Side</a></div>
+        <div class="title"><a href="">Programming</a></div>
+        <div class="title"><a href="">XMl</a></div>
+        <div class="title"><a href="">Web Building</a></div>
+        <div class="title"><a href="">Reference</a></div> -->
+
+        <!-- <ul>
+            <li class="title"><a href="">HTML/CSS</a></li>
+            <li class="title"><a href="">Browser Side</a></li>
+            <li class="title"><a href="">Server Side</a></li>
+            <li class="title"><a href="">Programming</a></li>
+            <li class="title"><a href="">XMl</a></li>
+            <li class="title"><a href="">Web Building</a></li>
+            <li class="title"><a href="">Reference</a></li>
+        </ul> -->
+
+        <ul class="nav">
+            <li><a href="#">HTML/CSS</a></li>
+            <li><a href="#">Browser Side</a></li>
+            <li><a href="#">Server Side</a></li>
+            <li><a href="#">Programming</a></li>
+            <li><a href="#">XMl</a></li>
+            <li><a href="#">Web Building</a></li>
+            <li><a href="#">Reference</a></li>
+        </ul>
+        
+
+    </nav>
+</body>
+</html>

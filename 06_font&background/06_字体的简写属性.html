@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            border: 1px red solid;
+
+            /* 
+                font 可以设置字体的简写属性
+                    语法:
+                        font:字体大小/行高 字体族
+                        行高 可以省略不写但有默认值，前面的line-height会被覆盖
+                        省略了默认值为normal和normal的font-weight和font-style前面的会被覆盖
+                        字体大小和字体族必须写，必须一个倒数第一和倒数第二
+            */
+
+            /* font-size: 50px;
+            font-family: serif; */
+            font: 50px/2 serif;
+
+            font: italic bold 50px/2 serif;
+
+            /* 
+                font-weight 字重 字体的加粗
+                    可选值：
+                        normal 默认值 不加粗
+                        bold 加粗
+                        100-900 九个级别（没什么用）
+
+                font-style 字体的风格
+                    可选值：
+                        normal 正常的
+                        italic 斜体
+            */
+            font-weight: 500;
+
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div>今天天气真不错 hello hello今天天气真不错 hello hello今天天气真不错 hello hello今天天气真不错 hello hello今天天气真不错 hello hello今天天气真不错 hello hello今天天气真不错 hello hello今天天气真不错 hello hello</div>
+</body>
+</html>

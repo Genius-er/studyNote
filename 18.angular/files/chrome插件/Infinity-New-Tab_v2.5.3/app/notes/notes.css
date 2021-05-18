@@ -1,0 +1,122 @@
+#notepadSlideBigBox{
+	overflow:hidden; 
+}
+#notesContent{
+	height:100%;
+	box-sizing:border-box;
+	padding-top: 30px;
+	position: relative;
+	overflow: hidden;
+}
+
+
+#notesOption{
+	height:30px;
+	position: absolute;
+	margin-top: -30px;
+}
+
+#notesOption img{
+	width:20px;
+	margin-top: 8px;
+	margin-left: 20px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+#notesOption img:hover{
+	opacity: 0.9;
+}
+#notesOption img:active{
+	opacity: 0.7;
+}
+
+#addNotesTitle img{
+	width:200px;
+}
+
+.notesMenu{
+	width:140px;
+	height:100%;
+	background-color:#F3EED7;
+	position: absolute;
+	top:74px;
+	left:-140px;
+	overflow-y:scroll;
+	overflow-x:hidden;  
+}
+.notesMenu::-webkit-scrollbar {
+	width:0px;
+	background-color: transparent;
+}
+.notesMenu div{
+	width:124px;
+	padding-left: 8px;
+	padding-right: 8px;
+	font-size: 18px;
+	color:#666;
+	height:auto;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	overflow: hidden;
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+	cursor: pointer;
+	background-color: transparent;
+	position: relative;
+}
+.notesMenu div:nth-child(1){
+	margin-top: 1px;
+}
+.notesMenu div:hover{
+	background-color: rgba(243, 156, 18, 0.33);
+	color:#fdfdfd;
+}
+@-webkit-keyframes notesMenuSlide{
+    0% {-webkit-transform:translate(0px); 
+    }
+    100% {-webkit-transform:translate(140px);
+    }
+}
+@-webkit-keyframes notesMenuSlideIn{
+    0% {-webkit-transform:translate(140px); 
+    }
+    100% {-webkit-transform:translate(0px);
+    }
+}
+.notesMenuSlide{
+	-webkit-animation:notesMenuSlide 0.25s ease;
+	-webkit-transform:translate(140px);
+}
+.notesMenuSlideIn{
+	-webkit-animation:notesMenuSlideIn 0.25s ease;
+	-webkit-transform:translate(0px);
+}
+
+.notesDelete{
+	width: 30px;
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	border-radius: 30px;
+	display: none;
+}
+
+.notesDelete:hover{
+	background-color: #fdfdfd;
+}
+
+#addNotesTitle{
+	width:100%;
+	height:100%;
+	overflow-y:scroll; 
+	overflow-x: hidden;
+	outline: none;
+	font-size: 16px;
+	line-height: 1.8;
+	box-sizing:border-box;
+	padding-left: 25px;
+	padding-right: 20px;
+	padding-top: 15px;
+	padding-bottom: 20px;
+}

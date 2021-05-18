@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            font-size: 50px;
+            /* 
+                text-decoration 设置文本修饰
+                    可选值：
+                        none 什么都没有（默认值）
+                        underline 下划线
+                        line-through 删除线
+                        overline 上划线
+             */
+            text-decoration: underline;
+
+            /* 这种方式ie不支持 */
+            /* text-decoration: underline red dotted; */
+
+        }
+
+        .box2{
+            width: 200px;
+            /* 
+                white-space 设置网页如何处理空白 
+                    可选值：
+                        normal 正常
+                        nowrap 不换行
+                        pre 保留空白（html中怎么样的格式就什么格式）
+            */
+            /* 用下面的方式可以设置文本不全显示并显示省略号 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        今天天气真不错
+    </div>
+
+    <div class="box2">
+        According to the overall arrangement of the University, our university will organize students to return to school in batches, stagger peak and safely from September 1 to 5. September 1 is the first day for students to return to school. Summer is over and autumn is coming. The students of Guangwai university meet the beautiful campus in this warm season. Next, please follow the camera of the reporter to direct the students' first day back to school.
+    </div>
+</body>
+</html>

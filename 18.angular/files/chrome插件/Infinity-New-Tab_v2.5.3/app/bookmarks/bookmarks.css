@@ -1,0 +1,100 @@
+#bookmarksSlideBigBox{
+	position: relative;
+}
+#allBookmark{
+	width:100%;
+	height: 100%;
+	box-sizing:border-box;
+	padding-top: 50px;
+}
+#bookmarksLeft{
+	width:106px;
+	height: 100%;
+	overflow-y:scroll;
+	overflow-x:hidden; 
+	float: left;
+	box-shadow: #ccc 0px 5px 10px;
+}
+#bookmarksLeft::-webkit-scrollbar {
+	width:0px;
+	background-color: transparent;
+}
+#bookmarksRight{
+	width:240px;
+	height:100%;
+	overflow-y:scroll;
+	overflow-x:hidden; 
+	float: right;
+}
+.bookmarksFolders{
+	width:102px;
+	height:40px;
+	line-height: 40px;
+	padding-left: 6px;
+	color:#999;
+	font-size: 12px;
+	overflow: hidden;
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+	cursor: pointer;
+	position: relative;
+}
+.bookmarksFolders:hover{
+	background-color:rgba(41, 128, 185, 0.5);
+	color:#fdfdfd;
+}
+.bookmarksItem{
+	width:100%;
+	height:24px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding:5px;
+	border-radius: 5px;
+	color:rgb(132, 132, 132);
+	cursor: pointer;
+}
+.bookmarksItem:hover{
+	background-color:rgba(245, 240, 246, 1);
+	color:#3498DB;
+}
+.bookmarksIcon{
+	width:14px;
+	height:14px;
+	float: left;
+	margin-top: 6px;
+	cursor: pointer;
+}
+
+.bookmarksName{
+	float: left;
+	width: 185px;
+	margin-left: 10px;
+	overflow: hidden;
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+	font-size: 12px;
+	cursor: pointer;
+	height: 45px;
+	line-height: 48px;
+	margin-top: -12px;
+}
+
+#bookmarkSearch{
+	width:100%;
+	height:50px;
+	position: absolute;
+	text-align: center;
+	box-shadow: #ccc 0px 0px 10px;
+}
+#searchBookmarks{
+	margin-top: 10px;
+
+}
+#searchFolder{
+	-webkit-transition:height 0.3s ease;
+	height:0px;
+	color:#fdfdfd;
+	background-color:#2980B9;
+}

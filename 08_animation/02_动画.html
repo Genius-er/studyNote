@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+
+            /* 解决父子间上外边距折叠 */
+            overflow: hidden;
+        }
+
+        .box1 div {
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .box2 {
+            background-color: #bbffaa;
+
+            /* 设置box2的动画 */
+            /* animation-name 要对当前元素生效的关键帧名字 */
+            animation-name: test;
+
+            animation-duration: 5s;
+
+            /* animation-delay: 2s; */
+
+            /* animation-timing-function: ease; 
+                    默认值是ease，慢速开始，先加速，再减速
+                        linear 匀速运动
+                        ease-in 加速运动
+                        ease-out 减速运动
+                        ease-in-out 先加速，后减速
+
+                        cubic-bezier() 未指定时序函数
+                            https://cubic-bezier.com
+
+                        steps() 分步执行过渡效果
+                            第一个值为步数
+                            第二个值：
+                                end，在时间结束时执行过渡（默认值）
+                                start 在时间开始时执行过渡 */
+
+            /* 
+            animation-iteration-count 动画执行的次数
+                可选值：
+                    次数
+                    infinite 无限执行
+            */
+            animation-iteration-count:3;
+
+            /* 
+                animation-direction 
+                    指定动画运行的方向
+                    可选值：
+                        默认值 normal 从from 向 to 运行 每次都是这样
+                        reverse 反方向执行
+                        alternate 重复执行时，来回执行（钟摆式）
+                        alternate-reverse 与上面一个相反
+
+            */
+            animation-direction: alternate-reverse;
+
+            /* 
+            animation-play-state 设置动画的执行状态
+                可选值：
+                    running 默认值 动画执行
+                    pasued 动画暂停
+            */
+            animation-play-state: paused;
+
+
+            /* 
+            animation-fill-mode 动画的填充模式
+                可选值：
+                    none： 默认值，动画执行完毕之后回到原来的位置
+                    backwards 停到动画结束的位置，不会回去、
+                    backwards 动画延时等待时，元素就会处于动画开始状态
+                    both 结合了backwards和backwards
+            */
+            animation-fill-mode: none;
+
+            /* animation 简写属性 */
+
+        }
+
+
+        .box1:hover div {
+
+            margin-left: 700px;
+        }
+
+        /* 
+            动画
+                动画和过渡类似，都是可以实现一些动态的效果
+                    不同的是过渡需要再某个属性发生变化时才会触发
+                    动画可以自动触发动态效果
+
+                设置动态效果，必须先要设置一个关键帧，关键帧设置了动画执行每一个步骤
+        */
+        /* 关键帧 关键帧的名字 */
+        @keyframes test {
+            /* 动画的开始位置,也可以使用0% */
+            from{
+                margin-left: 0;
+            }
+
+            /* 动画的结束位置 */
+            to{
+                margin-left:700px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3"></div> -->
+    </div>
+
+</body>
+
+</html>

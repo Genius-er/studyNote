@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            height: 500px;
+            width: 500px;
+            /* 
+                background-color 设置背景颜色
+                background-image 设置背景图片
+                    可以同时设置两个，color成为image的背景色
+                    如果背景图片小于元素，则背景图片会自动平铺将元素填满
+                    如果背景图片大于元素，将不能完全显示
+                    如果一样大，则正常显示
+                background-repeat 设置背景的重复方式
+                    可选值：
+                        repeat 默认值，沿x轴和y轴重复
+                        repeat-x 沿着x轴重复
+                        repeat-y 沿着y轴重复
+                        no-repeat 不重复
+                background-position 设置背景图片的位置
+                    设置方式：
+                        通过top left right bottom center几个表示方位的词设置背景图片的位置
+                            使用方位词时，必须同时指定两个值，如果只写一个，第二个默认center
+                        通过偏移量来指定背景图片的位置
+                            水平方向的和垂直方向的偏移量
+             */
+            background-color: #bbffaa;
+            background-image: url(./img/bb.jpg);
+            background-repeat: inherit;
+            background-position: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

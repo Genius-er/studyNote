@@ -1,0 +1,87 @@
+.box1{
+    // 后代
+    .box2{
+        color: red;
+    }
+    // 子元素
+    >.box3{
+        color: red;
+        &:hover{
+            color: orange;
+        }
+    }
+
+    // 为box1设置hover效果
+    // & 表示外层的父元素，这里表示 .box1
+    &:hover{
+        color:red;
+    }
+}
+
+
+.p1{
+    width: 100px;
+    height: 200px;
+}
+
+// .p2{
+//     width: 100px;
+//     height: 200px;
+//     color: red;
+// }
+
+// p2对p1进行扩展
+// :extend() 对当前选择器扩展指定选择器的样式（选择器分组）
+// 多个参数all会将.p1有关的所有样式都继承过来
+.p2:extend(.p1 all){
+    color: red;
+}
+
+.p3{
+    // 直接对指定的样式进行引用，这里就是相当于将p1的样式在这里进行复制;
+    // mixin 混合，这种会比上一种性能差一点
+    .p1();
+}
+
+// 使用类选择器时可以在选择器后边加一个括号，这时我们实际上就创建了一个mixins
+// 这个写法是专门是写个别人用的，自己不用，引用的时候括号都可以不写
+.p4(){
+    width: 100px;
+    height: 100px;
+    background-color: #bbffaa;
+}
+
+.p5{
+    .p4;
+}
+
+// 混合函数（mixins）在混合函数中可以直接设置变量
+.test(@w:100px,@h:100px){
+    width: @w;
+    height: @h;
+    border: 1px solid red;
+}
+
+div{
+    // 调用混合函数，按顺序传递参数
+    // .test(200px,300px);
+    // 不按顺序传值，就需要写明变量名
+    // .test(@h:200px,@w:300px);
+    // 使用默认值
+    .test();
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #bbffaa;
+
+    &:hover{
+        background-color: darken(#bbffaa,10%);
+    }
+}

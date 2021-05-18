@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 500px;
+            border: 1px red solid;
+
+            /* 
+                text-align 文本的水平对齐
+                    可选值：
+                        left 左侧对齐
+                        right 右对齐
+                        center 居中对齐
+                        justify 两端对齐（通过调整空格大小实现）
+             */
+
+             /* text-align: right; */
+             font-size: 50px;
+
+        }
+
+        span{
+            font-size: 20px;
+            border: 1px solid blue;
+
+            /* 
+                vertical-align 设置元素垂直对齐方式
+                    可选值：
+                        baseline 默认值，基线对齐
+                        top 顶部对齐，子元素顶部与父元素顶部对齐
+                        bottom 底部对齐
+                        middle 居中对齐
+                        还可直接指定值（多少px）
+             */
+            vertical-align: middle;
+        }
+
+        p{
+            border: 1px red solid;
+        }
+
+        img{
+            /* 处理图片与父元素的距离（默认是基线对齐，有缝） */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        今天天气helloyx<span>真不错 hello</span>!
+    </div> -->
+    <!-- <div>According to the overall arrangement of the University, our university will organize students to return to school in batches, stagger peak and safely from September 1 to 5. September 1 is the first day for students to return to school. Summer is over and autumn is coming. The students of Guangwai university meet the beautiful campus in this warm season. Next, please follow the camera of the reporter to direct the students' first day back to school.</div> -->
+    <p>
+        <img src="img/bb.jpg" alt="">
+    </p>
+</body>
+</html>

@@ -1,0 +1,2 @@
+!function(){"use strict";console.log(6),console.log(function(){for(var e=arguments.length,o=new Array(e),r=0;r<e;r++)o[r]=arguments[r];return o.reduce(((e,o)=>e+o),0)}(1,2,3,4)),"serviceWorker"in navigator&&window.addEventListener("load",(()=>{navigator.serviceWorker.register("/service-worker.js").then((()=>{console.log("sw注册成功了~")})).catch((()=>{console.log("sw注册失败了~")}))}))}();
+//# sourceMappingURL=built.05f6e0ce8a.js.map

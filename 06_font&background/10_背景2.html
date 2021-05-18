@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            height: 500px;
+            width: 500px;
+            overflow: auto;
+            /* background-color: #bbffaa; */
+            background-image: url(./img/bb.jpg);
+            /* background-repeat: repeat; */
+            /* background-position: bottom; */
+
+            /* 
+                设置背景的范围
+                    background-clip
+                        可选值：
+                            border-box 默认值,背景会出现在边框的下边
+                            padding-box 背景不会出现在边框，只出现在内容区和内边距
+                            content-box 背景只出现在内容区
+                    
+                    background-origin 背景图片的偏移量计算的原点
+                        可选值：
+                            padding-box 默认值，background-position从内边距处开始计算
+                            content-box background-position从内容区开始计算
+                            border-box background-position从边框处开始计算
+
+                    background-size 设置背景图片大小
+                        第一个值表示宽度，第二个值表示高度
+                            只设置一个值，第二个值（高度为auto）会按照比例变化
+                        可选值：
+                            cover 图片的比例不变，将元素铺满
+                            contain 图片比例不变，但图片完整显示
+
+             */
+
+            border: 10px red double;
+
+            background-clip: border-box;
+            background-origin: border-box;
+            background-size: 100% auto;
+        }
+
+        .box2{
+            width: 300px;
+            height: 1000px;
+            background-color: orange;
+
+            background-image: url(./img/bb.jpg);
+            background-size: 100% auto;
+
+            /* 
+                background-attachment 背景图片是否跟随元素移动
+                    可选值：
+                        scroll 默认值，背景图片会跟随元素移动
+                        fixed 背景图片会固定在页面中，不会跟随元素移动
+             */
+
+            background-attachment: fixed;
+            
+        }
+
+        /* 
+            background-color
+            background-image
+            background-repeat
+            background-position
+            background-size
+            background-origin
+            background-clip
+            background-attachment
+
+
+            background 背景相关的样式都可以通过该属性来设置
+                并且该属性没有顺序要求，也没有哪个属性值是必须写的
+
+                注意：
+                    background-size 必须写在 background-position 的后边，并且用/隔开
+                        例：background-position/background-size
+
+                    background-origin background-clip两个样式，origin要在clip的前边
+
+         */
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

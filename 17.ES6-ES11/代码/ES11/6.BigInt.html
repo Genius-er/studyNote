@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BigInt</title>
+</head>
+<body>
+
+    <script>
+        // 大整形
+        let n = 521n;
+
+        console.log(n,typeof n)
+
+        // 函数,参数只能是整数
+        let n2 = 123;
+        console.log(n2,typeof n2);
+        let n3 = BigInt(n2);
+        console.log(n3,typeof n3)
+
+
+        // 大数值运算
+        let max = Number.MAX_SAFE_INTEGER;
+        console.log(max);
+        console.log(max+1);
+        console.log(max+2);
+
+        // BigInt只能与BigInt进行运算
+        console.log(BigInt(max)+BigInt(2));
+
+
+    </script>
+
+</body>
+</html>

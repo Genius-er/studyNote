@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer{
+            height: 500px;
+            border-bottom: 10px black solid;
+            margin: 50px auto;
+
+            /* 外边距重叠问题 */
+            overflow: hidden;
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #bbffaa;
+
+            animation: ball 5s forwards cubic-bezier(0.0,0.25,0.50,1.0) infinite alternate;
+        }
+
+        /* 创建小球下落动画 */
+        @keyframes ball {
+            from{
+                margin-top: 0;
+            }
+
+            20%,60%,to{
+                margin-top: 400px;
+                animation-timing-function: ease-in;
+            }
+
+            40%{
+                margin-top: 100px;
+            }
+            80%{
+                margin-top: 200px;
+            }
+
+
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1">
+
+        </div>
+    </div>
+    
+</body>
+</html>

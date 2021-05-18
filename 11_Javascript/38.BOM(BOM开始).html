@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            BOM
+                - 浏览器对象模型
+                - BOM可以使用js来操作浏览器
+                - BOM提供一组对象，用来完成对浏览器的操作
+                - BOM对象
+                    Window
+                        - 代表整个浏览器的窗口，同时window也是网页中的全局对象
+                    Navigator
+                        - 代表当前浏览器的信息，通过该对象可以来识别不同的浏览器
+                        - 由于历史原因，Navigator对象中的大部分属性都已经不能帮助我们识别浏览器了
+                        
+                        - 一般我们只会使用userAgent（等价于浏览器）来判断浏览器的信息
+                            userAgent是一个字符串，这个字符串中包含用来描述浏览器信息的内容
+                            不同的浏览器会有不同的userAgent
+
+                            chrome的userAgent
+                                Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36
+                            360极速浏览器
+                                Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+                            Edge
+                                Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36 Edg/86.0.622.38
+                            FireFox
+                                Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0
+                            IE11
+                                - 在IE11中已经将微软和IE相关的标识都已经去除，所以我们基本不能通过UserAgent来识别一个浏览器是否是IE
+                                - 通过userAgent不能判断浏览器信息，可以通过一些浏览器 特有的对象 来判断浏览器信息
+                                    比如IE的ActiveXObject
+
+
+
+                    History
+                        - 代表浏览器的历史记录，可以通过该对象来操作浏览器的历史记录
+                            由于隐私原因，该对象不能回去到具体的历史纪录，【只能操作浏览器向前或向后翻页】
+                            而且该操作值在当次访问时有效
+
+                        - 属性
+                            - length
+                                可以获取当次访问链接的数量
+                        - 方法
+                            - back()
+                                回退到上一个页面，与浏览器回退按钮功能一样
+                            - forward()
+                                前进到下一个页面，与浏览器前进按钮功能一样
+                            - go()
+                                可以用来跳转到指定页面
+                                他需要一个整数的参数
+                                    1 表示向前跳一页
+                                    2 表示向前跳两页
+                                    -1 表示向后跳一页
+                                    -2 表示向后跳两页
+
+                     Location
+                        - 代表当前浏览器的地址栏，通过Location可以获取地址信息，或者操作浏览器跳转页面
+
+                        - 如果直接打印location，可以获得完整路径
+                        - 如果直接修改location修改为一个完整路径，或相对路径
+                            则会自动跳转页面，并且自动生成历史记录
+                        - 方法：
+                            assign()
+                                用来跳转到其他页面，作用跟直接修改location一样
+                            reload()
+                                刷新（ctrl+F5 可以强制刷新，可以清理缓存，reload(true)也可以进行强制刷新）
+                            replace()
+                                参数为地址url
+                                会自动跳转，但不会有历史记录，只是用新的页面代替旧的页面
+                        
+                    Screen
+                        - 代表用户的屏幕的信息，通过该对象可以获取到用户的显示器的相关信息
+
+                    这些BOM对象在浏览器都是作为window对象的属性保存的，
+                        可以通过window对象来使用，也可以直接使用
+
+         */
+
+        console.log(window);
+
+        console.log(window.navigator);
+        console.log(navigator);
+        console.log(navigator.userAgent);
+        // alert(window.ActiveXObject);
+        // 判断浏览器
+        /* if(/firefox/i.test(navigator.userAgent)){
+            alert("你是火狐");
+        }else if(/chrome/i.test(navigator.userAgent)){
+            alert("你是Chrome");
+        }else if("ActiveXObject" in window){
+            alert("你是IE，枪毙你")
+        } */
+
+
+        
+        console.log(history);
+        // 用来测试history
+        /* window.onload = function(){
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+                // alert(history.length)
+                // history.back();
+                // history.forward();
+                history.go(-2);
+            };
+        }; */
+
+
+        console.log(location);
+
+        alert(history.length)
+        console.log(screen);
+
+        
+
+    </script>
+</head>
+<body>
+    <h1>38.BOM(BOM开始).html</h1>
+    <button id="btn">点我一下</button>
+</body>
+</html>

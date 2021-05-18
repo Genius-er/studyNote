@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+
+        .div1{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 100px;
+            left: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">慢慢淡出</button>
+    <button id="btn2">慢慢淡入</button>
+    <button id="btn3">淡出淡入切换</button>
+    <br>
+    <button id="btn4">慢慢收缩</button>
+    <button id="btn5">慢慢伸展</button>
+    <button id="btn6">收缩伸展切换</button>
+    <br>
+    <button id="btn7">瞬间显示</button>
+    <button id="btn8">慢慢显示</button>
+    <button id="btn9">慢慢隐藏</button>
+    <button id="btn10">显示隐藏切换</button>
+
+    <div class="div1"></div>
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        var $div1 = $('.div1')
+
+        /*
+        * 淡入淡出
+        * 通过改变透明度实现*/
+        $('#btn1').click(function () {
+            $div1.fadeOut(1000)
+        })
+
+        $('#btn2').click(function () {
+            $div1.fadeIn(1000)
+        })
+
+        $('#btn3').click(function () {
+            $div1.fadeToggle(1000,function () {
+                alert('动画完成了')
+            })
+        })
+
+
+        /*滑动
+        * 不断改变元素的高度*/
+        $('#btn4').click(function () {
+            $div1.slideUp(3000)
+        })
+
+        $('#btn5').click(function () {
+            $div1.slideDown(3000)
+        })
+
+        $('#btn6').click(function () {
+            $div1.slideToggle(3000,function () {
+                alert('收放完成')
+            })
+        })
+
+        /*显示隐藏
+        * 默认没有动画
+        * 改变宽高和透明度*/
+        $('#btn7').click(function () {
+            $div1.show()
+        })
+
+        $('#btn8').click(function () {
+            $div1.show(1000)
+        })
+
+        $('#btn9').click(function () {
+            $div1.hide(1000)
+        })
+
+        $('#btn10').click(function () {
+            $div1.toggle(1000)
+        })
+    </script>
+</body>
+</html>

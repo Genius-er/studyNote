@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            DOM的增删改
+                createElement()
+                    将标签名作为参数
+                createTextNode()
+                    根据文本内容作为参数
+                appendChild()
+                    把新的子节点添加到指定节点。
+                    用法：父元素.appendChild(子节点)
+                insertBefore()
+                    在指定的子节点前面插入新的子节点。
+                    父节点调用
+                    语法：父节点.insertBefore(新节点，旧节点)
+                replaceChild()
+                    在指定的子节点前面插入新的子节点。
+                    语法：父节点.replaceChild(新节点，旧节点)
+                removeChild()
+                    删除子节点。
+                    语法：父节点.removeChild(子节点)
+
+                注意父节点可以使用
+                    子节点.parentNode
+                        这样就不用去单独获取父节点
+
+                可以通过innerHTML修改来完成增删改的操作
+                    但通过这个动静会大大点，一般会两种方式结合
+
+                    方式：
+                        1、先创建一个节点
+                        2、在节点中通过修改innerHTML来达到增删改
+                        3、再把该节点添加到指定位置
+
+                        例：var li = cocument.createElement("li");
+                            li.innerHTML = "要添加的HTML代码";
+                            添加位置的节点.appendChild(li);
+
+            注意：
+                对表格的添加，浏览器原本会自动加tbody
+                    最好自己写tbody
+
+
+                
+         */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

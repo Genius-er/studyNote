@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String.prototype.matchAll</title>
+</head>
+<body>
+    <script>
+        /*这个方法用来获得正则批量匹配的结果*/
+        let str = `
+        <ul>
+            <li>
+                <a>肖生克的救赎</a>
+                <p>上映日期: 1994-09-10</p>
+            </li>
+            <li>
+                <a>阿甘正传</a>
+                <p>上映日期: 1994-07-06</p>
+            </li>
+        </ul>`;
+
+        const result = str.matchAll(/<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg)
+
+        // 返回的结果是可迭代对象
+        console.log(result)
+
+        for(let v of result){
+            console.log(v)
+        }
+    </script>
+
+</body>
+</html>

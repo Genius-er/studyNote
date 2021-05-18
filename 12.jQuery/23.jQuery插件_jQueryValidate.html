@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+<form>
+    <input type="checkbox" value="篮球" name="items">篮球
+    <input type="checkbox" value="足球" name="items">足球
+    <input type="checkbox" value="羽毛球" name="items">羽毛球
+    <input type="checkbox" value="乒乓球" name="items">乒乓球<br>
+    <input type="button" id="checkedAllBtn" value="全  选">
+    <input type="button" id="checkedNoBtn" value="全不选">
+    <input type="button" id="checkedRevBtn" value="反  选">
+</form>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/my_jquery-plugin.js"></script>
+    <script>
+        /*
+        * jQuery插件
+        *   扩展插件
+        *       扩展jQuery的工具方法
+        *       扩展jQuery对象的方法
+        *   jQuery插件
+        *       理解
+        *       jquery-validation
+        *       jquery UI
+        *       laydate(layui里的)
+        * */
+
+        /*
+        * 需求
+        * 1、给$添加4个工具方法：
+        *   使用$.extend()
+        *   min(a,b)：返回较小的值
+        *   max(a,b)：返回较大的值
+        *   leftTrim()：去掉字符串左边的空格
+        *   rightTrim()：去掉字符串右边的空格
+        * 2、给jQuery对象添加3个功能方法：
+        *   使用$.fn.extend()
+        *   checkAll()：全选
+        *   uncheckAll()：全部选
+        *   reverseCheck()：全反选
+        * */
+
+        // 测试插件
+        var a,b,str
+        a = 5
+        b = 6
+        str = '   abc   '
+        console.log('min',$.min(a,b))
+        console.log('max',$.max(a,b))
+        console.log('lT',$.leftTrim(str))
+        console.log('rT',$.rightTrim(str)+'-----')
+
+        var $items = $(':checkbox[name=items]')
+        $('#checkedAllBtn').click(function () {
+            $items.checkAll()
+        })
+        $('#checkedNoBtn').click(function () {
+            $items.uncheckAll()
+        })
+        $('#checkedRevBtn').click(function () {
+            $items.reverseCheck()
+        })
+
+
+
+
+    </script>
+
+</body>
+</html>

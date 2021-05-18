@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+
+        .div1{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 20px;
+            left: 10px;
+            background: blue;
+        }
+
+        .div2{
+            position: absolute;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul1">
+        <li>AAAA</li>
+
+        <li title="hello">BBBB</li>
+        <li class="box">CCCC</li>
+
+        <li title="hello">DDDD</li>
+        <li title="two">EEEE</li>
+        <li>FFFF</li>
+    </ul>
+    <br>
+    <br>
+    <ul id="ul2">
+        <li>aaa</li>
+        <li title="hello">bbb</li>
+        <li class="box">ccc</li>
+        <li title="hello">ddd</li>
+        <li title="two">eee</li>
+    </ul>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        // $('#ul1').append('<span>append添加的span</span>')
+        $('<span>appendTo添加的span</span>').appendTo('#ul1')
+
+        // $('#ul1').prepend('<span>prepend添加的span</span>')
+        $('<span>prependTo添加的span</span>').prependTo('#ul1')
+
+        $('#ul1>li[title="hello"]').before('<span>before添加的span</span>')
+        $('#ul1>li[title="hello"]').after('<span>after添加的span</span>')
+
+        // $('#ul2 li[title="hello"]').replaceWith('<p>用replaceWith替换的p标签</p>')
+        $('<p>用replaceAll替换的p标签</p>').replaceAll('#ul2 li[title="hello"]')
+
+        // $('#ul2').empty()
+        $('#ul2>li').remove()
+
+
+    </script>
+</body>
+</html>

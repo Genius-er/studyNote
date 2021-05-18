@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@total-width:750;
+@border-radius:10/40rem;
+
+.w{
+    width: 693/40rem;
+    margin: 0 auto;
+}
+
+
+
+// 设置根元素
+html{
+    // 设置rem的比值 
+    font-size: 100vw/@total-width * 40;
+    background-color: #eff0f4;
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+// 设置头部header
+.top-bar:extend(.w){
+    // 设置弹性容器
+    display: flex;
+    // 设置高度
+    height: 175/40rem;
+    // 设置对齐方式
+    justify-content: space-between;
+    // 
+    align-items: baseline;
+
+    a{
+        color: #24253d;
+        font-size: 50/40rem;
+
+        i{
+            color: #999999;
+            font-size: 1rem;
+        }
+    }
+}
+
+// 设置banner
+.banner:extend(.w){
+    img{
+        width: 100%;
+        border-radius: @border-radius;
+    }
+}
+
+// 设置menu
+.menu:extend(.w){
+    height: 329/40rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    a{
+        width: 327/40rem;
+        height: 104/40rem;
+        border-radius: @border-radius;
+        line-height: 104/40rem;
+        color: white;
+        font-size: 30/40rem;
+        i{
+            margin: 0 10px 0 39/40rem;
+        }
+    }
+
+    a.courses{
+        background-image: linear-gradient(to right,#f47866,#f97053);
+    }
+    a.star{
+        background-image: linear-gradient(to right,#d484fd,#c657ff);
+    }
+    a.sub{
+        background-image: linear-gradient(to right,#fe497c,#ff3971);
+    }
+    a.download{
+        background-image: linear-gradient(to right,#1bc9fb,#1d92ff);
+    }
+}
+
+// 设置课程列表courses-list
+.courses-list{
+    // background-color: #bfa;
+    height: 430/40rem;
+    .course-title{
+        width: 693/40rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        h2{
+            font-size: 33/40rem;
+            color: #24253d;
+        }
+        span{
+            font-size: 33/40rem;
+            color: #656565;
+        }
+    }
+
+    .item-list{
+        width: 750/40rem;
+        display: flex;
+        overflow: auto;
+
+        margin: 10px 0;
+        
+        .item{
+            width: 327/40rem;
+            height: 324/40rem;
+            border-radius: 10/40rem;
+            box-shadow: 0 0 12/40rem rgba(0, 0, 0, .2);
+
+            margin: 12/40rem 12/40rem;
+
+            
+
+
+
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+                margin: 0 20/40rem;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-evenly;
+                img{
+                    
+                    width: 285/40rem;
+                    
+                }
+                span{
+                    font-size: 29/40rem;
+                    color: #24253d;
+                }
+                .user-info{
+                    display: flex;
+                    align-items: center;
+                    .avatar{
+                        width: 42/40rem;
+                        height: 42/40rem;
+                        margin-right: 10/40rem;
+                    }
+                    span{
+                        font-size: 24/40rem;
+                        color: #969494;
+                    }
+                }
+            }
+        }
+        .item:first-child{
+            margin-left: 29/40rem;
+        }
+        
+        
+
+        
+        
+    }
+
+    // 隐藏滚动条
+    .item-list::-webkit-scrollbar{
+        display: none;
+    }
+}

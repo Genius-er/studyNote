@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <span>span文本1</span>
+        <li>AAAAA</li>
+        <li title="hello" class="box2">BBBBBB</li>
+        <li class="box" id="cc">CCCCCC</li>
+        <li title="hello">DDDDDDDD</li>
+        <li title="two"><span>span文本2</span></li>
+        <span>span文本3</span>
+    </ul>
+    <span>span文本444</span>
+    <li>eeeee</li>
+    <li>EEEEE</li>
+    <br>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        /*
+        * 过滤和查找返回的jQuery对象
+        * 但用[index]返回的是DOM对象*/
+
+        var $ul = $('ul');
+
+        // $ul.children('span').eq(1).css('background','red')
+
+        //找后代
+        // $ul.find('span').eq(1).css('background','red')
+
+        // $ul.parent().css('background','red')
+
+        var $li = $('#cc')
+
+        // $li.prevAll('li').css('background','red')
+        $li.siblings('li').css('background','red')
+
+
+
+
+
+    </script>
+</body>
+</html>

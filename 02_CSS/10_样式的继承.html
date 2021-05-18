@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            font-size: 12px;
+        }
+        /* 
+            样式的继承，我们为一个元素设置的样式同时也会应用到它的后代元素中
+
+            继承是发生在祖先和后代之间的
+
+            继承的设计是为了方便我们的开发，利用继承我们可以将一些通用样式统一设置到共同的祖先元素上，
+                这样只需要设置一次即可让所有的元素都具备该样式
+
+            注意：并不是所有的样式都会继承
+                比如 背景相关的，布局相关的这些样式都不会继承
+         */
+        p{
+            color: red;
+        }
+
+        div{
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        我是一个p元素
+        <span>我是p元素中的span</span>
+    </p>
+
+    <span>我是p元素外面的span</span>
+
+    <div>我是div<span>我是div中的span</span></div>
+</body>
+</html>

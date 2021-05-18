@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            伪元素，页面中不真实存在的元素（特殊的位置）
+                用::开头
+                    ::first-letter 表示第一个字
+                    ::first-line 表示第一行
+                    ::selection 选中的内容
+                    ::before 元素的开始
+                    ::after 元素的最后
+                        -before和after必须结合content属性来使用
+                        -可以用来指定内容两边的内容，并且选中不了
+        */
+        /* p::first-letter{
+            font-size: 90px;
+        } */
+        /* p::first-line{
+            font-size: 90px;
+        } */
+
+        /* p::selection{
+            font-size: 90px;
+        } */
+        /* div::before{
+            content: "abc";
+            color: orange;
+        } */
+        /* div::after{
+            content: "abc";
+            color: orange;
+        } */
+    </style>
+</head>
+<body>
+    <div>我爱你</div>
+    <p>我明天能见到你吗</p>
+    <p>aksjdhkjasdhkajsdh</p>
+</body>
+</html>

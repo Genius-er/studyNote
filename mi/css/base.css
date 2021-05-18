@@ -1,0 +1,40 @@
+/* 公共样式 */
+
+/* 解决高度塌陷 */
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333333;
+
+    /* 给body设置这个,防止body过小,让元素溢出 */
+    min-width: 1226px;
+}
+
+/* 设置一个类,用于表示中间容器的宽度 */
+.w{
+    /* 固定容器宽度 */
+    width: 1226px;
+    /* 设置容器居中 */
+    margin: 0 auto;
+}
+
+/* 去除a的下划线 */
+a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+/* 去除img在容器下边还有点距离 */
+img{
+    vertical-align: top;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1. 安装工具 npm i babel-cli（babel命令行的工具） babel-preset-env（预设包，能对最新的ES进行转换） browserify打包工具(webpack也是打包工具，但比前者难) -D
+        2. 编译 npx babel src/js -d dist/js --presets=babel-preset-env
+        3. 打包 npx browserify dist/js/app.js -o dist/bundle.js
+        4、如果去原来的代码改动后，要重新进行2，3步，对打包的文件进行更新
+     -->
+     <script src="dist/bundle.js"></script>
+</body>
+</html>

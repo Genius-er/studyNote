@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <title></title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box{
+      width: 8rem;
+      height: 8rem;
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+  var box = document.getElementById('box');
+
+  //获取设备像素比=物理像素/css像素
+  var dpr = window.devicePixelRatio;
+  console.log("dpr:"+dpr)
+  //缩放比
+  var scale = 1/dpr;
+  console.log("scale:"+scale)
+
+  //获取屏幕宽度 375
+  var width = document.documentElement.clientWidth;
+  console.log("width:"+width)
+
+  //获取meta标签
+  var metaNode = document.querySelector('meta[name="viewport"]')
+  metaNode.setAttribute('content','width=device-width,initial-scale='+ scale +',user-scalable=no')
+
+  //元素比例乘回来
+  var htmlNode = document.querySelector('html');
+  htmlNode.style.fontSize = width/16*dpr + 'px';
+
+</script>
+</html>
+
+
+<script type="text/javascript">
+  window.onload = function () {
+    // 像素比=物理像素/css像素
+    var dpr = window.devicePixelRatio
+    //缩放比例
+    var scale = 1/dpr
+
+    var width = document.documentElement.clientWidth
+
+    // 获取meta标签
+    var metaNode = document.querySelector('meta[name="viewport"]')
+    metaNode.setAttribute('content','width=device-width')
+  }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    <script>
+        /*遍历器（Iterator）就是一种机制。它是一种接口，为各种不同的数据结构提
+        供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作。
+        1) ES6 创造了一种新的遍历命令 for...of 循环，Iterator 接口主要供 for...of 消费
+        2) 原生具备 iterator 接口的数据(可用 for of 遍历)
+        a) Array
+        b) Arguments
+        c) Set
+        d) Map
+        e) String
+        f) TypedArray
+        g) NodeList
+        具备 iterator 接口的数据，可以使用『扩展运算符』即（...）和『for…of…』进行遍历
+        3) 工作原理
+        a) 创建一个指针对象，指向当前数据结构的起始位置
+        b) 第一次调用对象的 next 方法，指针自动指向数据结构的第一个成员
+        c) 接下来不断调用 next 方法，指针一直往后移动，直到指向最后一个成员
+        d) 每调用 next 方法返回一个包含 value 和 done 属性的对象
+        注: 需要自定义遍历数据的时候，要想到迭代器。*/
+
+        //声明一个数组
+        const xiyou = ['唐僧','孙悟空','猪八戒','沙僧'];
+
+        //使用 for...of 遍历数组
+        // for(let v of xiyou){
+        //     console.log(v);
+        // }
+
+        let iterator = xiyou[Symbol.iterator]();
+
+        //调用对象的next方法
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+    </script>
+</body>
+</html>

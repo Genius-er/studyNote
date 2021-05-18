@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #areaDiv{
+            width: 500px;
+            height: 300px;
+            border: 1px black solid;
+        }
+
+        #showMsg{
+            width: 500px;
+            height: 100px;
+            border: 1px black solid;
+            margin-top: 100px;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            /* 
+                当鼠标在areaDiv移动时，在showMsg显示坐标
+             */
+
+            var areaDiv = document.getElementById("areaDiv");
+            var showMsg = document.getElementById("showMsg");
+
+            /* 
+                onmousemove
+                    鼠标在元素中移动触发
+
+                clientX clientY
+                    当前可见窗口的坐标
+
+                pageX pageY
+                    当前页面的坐标
+                    不支持ie8及以下
+
+
+                事件对象
+                    - 当事件响应函数触发时，浏览器每次都会将一个事件对象作为实参传递进响应函数
+                        在事件对象中封装了当前事件的相关信息
+                    - 在IE8及以下不会传递事件对象，是将事件对象作为window对象的属性保存的
+                        解决方式：在event前加window,但火狐不支持
+                            兼容方式：if（event）
+
+             */
+            areaDiv.onmousemove = function(event){
+                // 方式一
+                /* if(!event){
+                    showMsg.innerHTML = "x = "+window.event.clientX+" y = "+window.event.clientY;
+                } */
+
+                // 方式二
+                event = event || window.event;
+
+                showMsg.innerHTML = "x = "+event.clientX+" y = "+event.clientY;
+
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="areaDiv"></div>
+    <div id="showMsg"></div>
+</body>
+</html>

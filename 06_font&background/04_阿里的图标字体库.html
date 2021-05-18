@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+
+    <style>
+        i.iconfont{
+            font-size: 50px;
+        }
+
+        /* 用伪元素使用 */
+        p::before{
+            content:'\e61c';
+            font-family: 'iconfont';
+            font-size: 50px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- 用实体使用 -->
+    <!-- <i class="iconfont">&#xe61c</i>
+    <i class="iconfont">&#xe61d</i>
+    <i class="iconfont">&#xe61e</i>
+    <i class="iconfont">&#xe61f</i> -->
+
+    <!-- 用类使用 -->
+    <!-- <i class="iconfont icon-zhixianghuishou"></i> -->
+    
+    <p>hello</p>
+</html>

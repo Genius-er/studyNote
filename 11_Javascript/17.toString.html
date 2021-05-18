@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            当我们再页面中打印一个对象时，实际上是输出对象的toString（）方法的返回值（好像版本更新了，再chrome中直接打印对象里面会有内容，）
+            如果我们希望再输出对象时不输出[object Object]，可以为对象添加一个toString（）方法
+         */
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        var per = new Person("孙悟空",18);
+        // 在原型中添加toString可以在所有实例中使用
+        Person.prototype.toString = function(){
+            return "我是修改后的toString"
+        }
+
+        console.log(per);
+        console.log(per.toString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

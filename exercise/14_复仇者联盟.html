@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         html{
+            perspective: 800px;
+        }
+
+        .cube{
+            width: 200px;
+            height: 200px;
+            /* background-color: #bfa; */
+            margin: 100px auto;
+
+            /* 设置3d效果，不然立方体旋转起来还是片 */
+            transform-style: preserve-3d;
+        }
+
+        .cube>div{
+            width: 200px;
+            height: 200px;
+
+            /* 为元素设置透明效果 */
+            opacity: .7;
+
+            position: absolute;
+        }
+
+        .box1{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .box2{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .box3{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .box4{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .box5{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        .box6{
+            transform: rotateY(0) translateZ(100px);
+        }
+
+        .cube:hover{
+            animation: run 5s infinite linear;
+        }
+
+        @keyframes run {
+            from{
+                transform: rotateX(0) rotateY(0);
+            }
+            to{
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 创建一个外部容器 -->
+    <div class="cube">
+        <!-- 引入图片 -->
+        <div class="box1"><img src="./img/14/1.jpg" alt=""></div>
+        <div class="box2"><img src="./img/14/2.jpg" alt=""></div>
+        <div class="box3"><img src="./img/14/3.jpg" alt=""></div>
+        <div class="box4"><img src="./img/14/4.jpg" alt=""></div>
+        <div class="box5"><img src="./img/14/5.jpg" alt=""></div>
+        <div class="box6"><img src="./img/14/6.jpg" alt=""></div>
+
+    </div>
+</body>
+</html>

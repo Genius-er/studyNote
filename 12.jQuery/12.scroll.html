@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 1000px;
+        }
+        div{
+            height: 200px;
+            width: 100px;
+            word-wrap: normal;
+            overflow: auto;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div>
+        akjshdklajshdlkjash
+        dakjshdlaksjh
+        dlasjdhalsj
+        dhlasjdhalsjdhalsdj
+        khalskdjhalksjdhalksjdh
+        kasjhdkjashdlkashjdl
+        kahsd
+        asdlkhaslkd
+        hlashdlkash
+        dlkashdlka
+        shdlkashdlakshdlakshdlakshdlaskdh
+        alskdhasdss
+        ssssssssss
+        sssssssssssssssss
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id="btn1">得到scrollTop</button>
+    <button id="btn2">设置scrollTop</button>
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        $('#btn1').click(function () {
+            console.log($('div').scrollTop())
+            console.log($(document.documentElement).scrollTop()+$(document.body).scrollTop())
+            // console.log($('body').scrollTop())
+        })
+
+        $('#btn2').click(function () {
+            $('div').scrollTop(200)
+            $('html,body').scrollTop(200)
+
+        })
+
+
+
+    </script>
+
+</body>
+</html>

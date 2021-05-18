@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* 
+            Object 对象（引用数据类型）
+                对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性
+
+                对象的分类：
+                    1、内建对象
+                        -ES标准中定义的对象，在任何的ES实现中都可以使用
+                        -比如：Math String Number Boolean Function Object
+
+                    2、宿主对象
+                        - 由Js的运行环境提供的对象，目前来见主要指的是浏览器提供的对象
+                        - 比如BOM DOM
+                    
+                    3、自定义对象
+                        - 由开发人员自己创建的对象
+
+                        创建对象
+                            使用new关键字调用的函数，是构造函数constructor
+
+
+
+
+         */
+        //  对象的基本操作
+        //  创建对象
+        //      使用new关键字调用的函数，是构造函数constructor
+         var obj = new Object();
+
+
+        //  像obj中添加一个name属性
+        obj.name = "孙悟空";
+
+        // 读取对象中的属性
+        //  如果读取对象中没有的属性，不会报错，而是返回undefined
+        console.log(obj.name);
+
+        // 修改属性值
+        obj.name = "猪八戒";
+
+        // 删除属性
+        // 语法：delete 对象.属性名
+        delete obj.name;
+
+        console.log(obj);
+
+
+        /* 
+            属性名
+                对象的属性名不强制要求遵守标识符的规范
+                    什么乱七八糟的名字都可以使用
+
+                但是使用时尽量遵守规范
+
+                如果使用特殊的属性名，不能采用.的方式操作
+                    需要使用另一种方式:
+                        语法：对象["属性名"] = 属性值
+
+                使用[]这种形式操作属性，更加灵活
+                    在[]中可以直接传递一个变量，这样变量值时多少就会读取哪个属性
+                        中括号中可以传递参数
+         */
+
+         /* 
+            属性值
+                可以是任意的数据类型
+                    甚至可以是对象
+          */
+
+        /* 
+            in 运算符
+                - 可以检查一个对象中是否含有指定属性
+                    如果有返回true
+                - 语法
+                    "属性名" in 对象
+         */
+
+
+        /* 
+            对象字面量
+                用来创建一个对象
+                可以在创建的同时加入值
+                对象字面量的属性名可以加引号也可以不加，建议不加
+                    但要用特殊的，一定要加引号
+                语法： var obj = {
+                    name:"猪八戒",
+                    age:28,
+                    gender:"男"}
+                
+
+         */
+
+        
+        /* 
+            枚举对象中的属性
+                语法：
+                    for（var 变量 in 对象）{
+                        console.log(变量);
+                        console.log(对象[变量])
+                    }
+
+                把属性名复制给对象
+         */
+
+
+         /* 
+            使用工厂的方法创建对象
+                创建对象封装到function中
+                使用工厂方法创建的对象，使用的构造函数都是Object
+                    区分不开
+                
+          */
+
+        /* 
+            构造函数
+                使用工厂方法创建的对象，使用的构造函数都是Object
+                    区分不开
+                构造函数就是一个普通的函数，创建方式和普通函数没有区别
+                不同的是构造函数习惯上首字母大写
+                调用方式也不同，构造函数要用new调用
+                构造函数的执行流程：
+                    1、立刻创建一个新的对象
+                    2、将新建的对象设置为函数中this，在构造函数中可以使用this来引用新建的对象
+                    3、逐行执行函数中的代码
+                    4、将新的对象作为返回值返回
+
+                使用同一个构造函数创建的对象，我们称为一类对象，也将一个构造函数称为一个类
+
+                可以使用 instanceof 运算符检查一个对象是否是一个类的实例
+                所有对象都是Object的实例
+         */
+        // function Person(name,age){
+        //     this.name = name;
+        //     this.age = age
+        // }
+        // var per = new Person("孙悟空",18);
+        // console.log(per)
+
+        // console.log(per instanceof Person)
+
+        /*  在构造函数里创建方法
+                在Person构造函数中，为每个对象添加一个sayName方法
+            在构造函数外创建方法
+                所有对象共享一个方法，就不会占用大量空间
+                将函数定义在全局作用域中，污染了全局作用域的命名空间
+                    而且定义在全局作用域中也很不安全
+
+         */
+        // function sayName(){
+        //         alert(this.name)
+        //     }
+        // function Person(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sayName = sayName
+        // }
+        // var per = new Person("孙悟空",18);
+        // console.log(per)
+
+        // console.log(per instanceof Person)
+        // per.sayName();
+
+        /* 
+            原型 prototype
+                我们创建的每一个函数，解析器都会向函数中添加一个属性prototype
+                    这个属性对应一个对象，这个对象就是原型对象
+                如果函数作为普通函数调用prototype没有任何作用
+                当作为构造函数调用时，
+                    它所创建的对象中都会有一个隐含的属性，指向该构造函数的原型对象
+                        我们可以通过__proto__来访问该属性
+
+                原型对象相当于一个公共区域，所有同一个类的实例都可以访问这个原型对象
+                    我们可以将共有的内容，统一设置到原型对象中
+                当我们访问的属性或方法，先在自己身上找，再到原型对象中找，没找到再到原型的原型中找，直到找到Object的原型，Object的原型没有原型
+                    用in检查某个属性，如果对象中没有，但原型中有，也会返回true
+                        如果要检查对象自己是否有
+                            可以使用对象的hasOwnProperty（）来检查对象自身是否含有该属性
+                                只有对象自身有该属性才返回true（这种方法没有添加，但可以用就是在原型中，但这些方法是在原型对象中的原型对象中）
+
+                在原型对象中创建方法
+                    不会污染全局作用域，以后共有的部分都可以添加到原型对象中（最推荐）
+
+         */
+         function MyClass(){
+                
+            }
+       
+        var mc = new MyClass();
+        console.log(mc.__proto__);
+        console.log(mc.__proto__ == MyClass.prototype);
+
+        
+        // function Person(name,age){
+        //     proto
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sayName = sayName
+        // }
+        // Person.prototype.sayName = function(){
+        //         alert(this.name)
+        //     }
+        // var per = new Person("孙悟空",18);
+        // console.log(per)
+
+        // console.log(per instanceof Person)
+        // per.sayName();
+
+  
+
+
+        
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

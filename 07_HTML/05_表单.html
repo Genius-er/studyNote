@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="target.html">
+        <!-- 
+            autocomplete="off" 关闭自动补全
+            readonly 设置为只读,数据会提交
+            disabled 禁用,数据不会提交
+            autofocus 自动获取焦点,刷新页面可以直接输入
+
+         -->
+        <input type="text" name="a" autocomplete="off" readonly>
+        <br>
+        <input type="text" name="b" disabled>
+        <br>
+        <input type="text" name="c" autofocus>
+        <br>
+        <!-- 
+            color兼容性有问题
+            email显示效果不同
+            都避免使用 
+        -->
+        <input type="color">
+        <input type="email">
+        <br>
+
+        <input type="submit">
+
+        <!-- 重置按钮,用于把表单里的内容设为默认值 -->
+        <input type="reset">
+
+        <!-- 
+            普通的按钮
+                可以用js丰富功能
+         -->
+        <input type="button" value="按钮">
+
+        <br>
+
+        <!-- 
+            功能与input的一样
+                不同点,有结束标签,里面可以嵌套东西,例如图片
+         -->
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <button type="button">按钮</button>
+    </form>
+</body>
+</html>

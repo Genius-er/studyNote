@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            
+            background-color: springgreen;
+            width: 200px;
+            height: 200px;
+            /* 
+                边框的宽度：border-width
+                边框的颜色：border-color
+                边框的样式：border-style 
+                缺一不可
+             */
+             /* 
+                border-width可以不写，有个默认值，但一般不用 
+                border-width可以用来指定四个方向的边框的宽度
+                    值的情况：
+                        四个值：上 右 下 左
+                        三个值：上 左右 下
+                        两个值：上下 左右
+                除了border-width还有一组border-xxx-width
+                    xxx可以是top right bottom left
+                */
+             border-width: 10px 20px 30px 40px;
+             border-width: 10px 20px 30px;
+             border-width: 10px 20px;
+             border-width: 10px;
+
+             border-right-width: 100px;
+             
+            /* 
+                也可以省略不写，自动使用color的颜色值
+                border-color指定边框颜色
+                使用方法跟width是一样的
+             */
+             border-color: orange;
+
+             /* 
+             不可以省略，默认值是none
+                border-style指定边框样式
+                    solid 实线
+                    dotted 点状虚线
+                    dashed 虚线
+                    double 双线
+
+                使用方法跟width是一样的
+              */
+             border-style: solid;
+
+
+
+             /* 
+             最常使用
+                border简写，通过该属性可以设置边框的所有样式，并且没有顺序
+                用法跟上面的也一样也有分上下左右
+              */
+              border:solid 10px orange
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            border: 10px red solid;
+
+            /* overflow: hidden; */
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+
+        /* 
+            用一个空标签解决高度塌陷，用结构解决表现问题（不好）
+         */
+        .box3{
+            clear: both;
+        }
+
+
+        /* 原理跟上面一样，只是用CSS解决，用表现解决表现的问题（最好的解决方式） */
+        .box1::after{
+            /* 默认after的元素是行内元素 */
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* 也可在box1中再加clearfix类解决高度塌陷问题 */
+        .clearfix::before,
+        .clearfix::after{
+            content: "";
+            display: table;
+            clear: both;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+
+        <!-- <div class="box3">
+
+        </div> -->
+    </div>
+</body>
+</html>

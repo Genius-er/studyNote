@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+
+        .inner{
+            /* width的值默认是auto */
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+            margin-left: auto;
+
+            /* 
+                元素的水平方向的布局：
+                    元素在其父元素中水平方向的位置由以下几个属性共同决定
+                    margin-left
+                    border-left
+                    padding-left
+                    width
+                    margin-right
+                    border-right
+                    padding-right
+
+                一个元素在其父元素中，水平布局必须要满足以下等式：
+                    margin-left（0）+
+                    border-left（0）+
+                    padding-left（0）+
+                    width（200）+
+                    margin-right（0）+
+                    border-right（0）+
+                    padding-right（0） = 其父元素内容区的宽度（！！！！必须满足）
+                    不满足就叫过度约束
+                    0+0+0+200+0+0+0 = 800
+                        -以上等式必须满足，如果相加结果使使等式不成立，则等式会自动调整
+                            -调整的情况
+                                -如果这七个值中没有为auto的情况，则浏览器会自动调整margin-right值以使等式满足
+                                -这些七个值中有三个值可以设置auto
+                                    width （width的值默认是auto）
+                                    margin-left
+                                    margin-right
+                                    -如果值为auto，则会自动调整为auto的那个值以使等式满足
+                                -如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，外边距设置成0
+                                -三个都设置auto，跟上面一样
+                                -如果宽度固定值，两个外边距auto，则会水平居中
+                                    使用这个方式使元素水平居中
+                                    示例：
+                                        width：xxxpx；
+                                        margin：0 auto；
+                                -如果width超过其父元素内容区的宽度，则其他调整会为负的
+                                
+
+
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+        我不在右边白色区域
+    </div>
+</body>
+</html>

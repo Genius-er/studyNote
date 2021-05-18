@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul{
+            width: 600px;
+            height: 800px;
+            border: 10px red solid;
+
+            /* 将ul设置成弹性容器 */
+            display: flex;
+
+            /* flex-direction: column; */
+
+            /* 
+                flex-wrap: 设置弹性元素是否再弹性容器中自动换行
+                    可选值：
+                        nowrap: 默认值，元素不会自动换行
+                        wrap 元素沿着侧轴自动换行
+                        wrap-reverse 元素沿着侧轴反方向换行
+            */
+            /* flex-wrap: wrap-reverse; */
+
+            /* flex-flow: wrap 和 direction 的简写属性*/
+            flex-flow: row wrap;
+
+            /* 
+                justify-content
+                    - 如何分配主轴上的空白空间（主轴上的元素如何排列）
+                        可选值：
+                            flex-start 元素沿着主轴起边排列
+                            flex-end 元素沿着主轴终边排列
+                            center 元素在主轴中居中排列
+                            space-around 空白分配到每个元素的两侧
+                            space-evenly 空白分配到每个元素的单侧
+                            space-between 空白分配到元素间
+
+            */
+            /* justify-content: space-between; */
+
+            /* 
+                align-items
+                    - 元素在侧轴如何对齐
+                    - 元素间的关系
+                        可选值：
+                            stretch 默认值，将元素的长度设置为相同的值
+                            flex-start 元素不会拉伸，沿着侧轴起边对齐
+                            flex-end 元素不会拉伸，沿着侧轴终边对齐
+                            center 居中对齐
+                            baseline 基线对齐
+            */
+            align-items: flex-start;
+            /* justify-content: center; */
+            /* 写上面两句可以让元素在父元素中居中 */
+
+            /* align-content: 侧轴空白空间的分布，与jusitify-content是一样的 */
+            align-content: flex-start;
+
+
+        }
+
+        li{
+            width: 200px;
+            /* height: 100px; */
+            background-color: #bbffaa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+
+            flex-shrink: 0;
+            
+            
+        }
+
+
+
+        li:nth-child(1){
+            /* align-self: 用来覆盖当前弹性元素上的align-itrms(单独设置弹性元素的对齐方式) */
+            align-self: flex-end;
+        }
+        li:nth-child(2){
+            background-color: pink;
+ 
+        }
+
+        li:nth-child(3){
+            background-color: orange;
+
+        }
+        li:nth-child(4){
+            background-color: yellowgreen;
+ 
+        }
+
+        li:nth-child(5){
+            background-color: chocolate;
+
+        }
+    </style>
+</head>
+<body>
+    
+
+    <ul>
+        <li>1</li>
+        <li>2
+            <div>2</div>
+        </li>
+        <li>3
+            <div>3</div>
+            <div>3</div>
+        </li>
+        <li>1</li>
+        <li>2
+            <div>2</div>
+        </li>
+    </ul>
+</body>
+</html>

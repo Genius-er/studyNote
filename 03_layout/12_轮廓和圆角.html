@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+
+
+            /* 
+                outline 用来设置元素的轮廓线，用法和border一模一样
+                    不同：轮廓不会影响到可见框的大小（只是描个边）
+
+                -一般是鼠标移入的时候加一个outline
+             */
+            /* border: 10px red solid; */
+            /* outline:10px red solid; */
+
+
+            /* 
+                box-shadow 用来设置元素的阴影效果，{阴影不会影响页面布局}
+                    默认情况阴影在正下方，看不到
+                    前两个值为阴影偏移量（左侧偏移量，垂直偏移量），可正可负
+                    第三个值 阴影的模糊半径
+                    最四个值为阴影的颜色
+             */
+            box-shadow:10px 10px 20px rgba(0, 0, 0,0.3);
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* 
+            border-radius:用来设置圆角 圆角设置的圆角的半径大小
+                四个值：左上 右上 右下 左下
+                三个值：左上 右上左下 右下
+                两个值：左上右下 右上左下
+                一个值：四个角
+                一个方向的两个半径用“/”分隔开
+                设置成50%把盒子变成圆形
+            */
+            border-radius:10px 20px 30px 40px;
+
+
+            /* border-top-left-radius */
+            /* border-top-right-radius */
+            /* border-bottom-left-radius */
+            /* border-bottom-right-radius */
+            /* 水平半径 和 垂直半径 两个相等为正园*/
+            border-top-left-radius: 50px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    hello
+    <div class="box2"></div>
+</body>
+</html>

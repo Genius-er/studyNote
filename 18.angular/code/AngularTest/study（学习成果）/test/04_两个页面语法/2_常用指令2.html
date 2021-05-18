@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<!--
+常用指令(二)
+  * ng-class: 动态引用定义的样式  {aClass:true, bClass:false}
+  * ng-style: 动态引用通过js指定的样式对象   {color:'red', background:'blue'}
+  * ng-click: 点击监听, 值为函数调用, 可以传$event
+  * ng-mouseenter: 鼠标移入监听, 值为函数调用, 可以传$event
+  * ng-mouseleave: 鼠标移出监听, 值为函数调用, 可以传$event
+-->
+<style>
+  .evenB {
+    background-color: grey;
+  }
+
+  .oddB {
+    background-color: green;
+  }
+</style>
+<body ng-app="myApp">
+
+<div ng-controller="MyCtrl">
+  <div style="width: 200px;height: 200px;" ng-style="myStyle"
+  ng-mouseenter="mouseenter()" ng-mouseleave="mouseleave()">
+
+  </div>
+
+  <ul>
+<!--    * ng-class: 动态引用定义的样式  {aClass:true, bClass:false}-->
+    <li ng-repeat="xxx in persons" ng-class="{evenB:$even,oddB:$odd}">
+      {{xxx.username}}---{{xxx.age}}
+    </li>
+  </ul>
+</div>
+
+
+
+<script type='text/javascript' src="../../js/angular-1.5.5/angular.js"></script>
+<script type="text/javascript">
+  angular.module('myApp',[])
+      .controller('MyCtrl',function ($scope) {
+        $scope.myStyle = {
+          background:"red"
+        }
+
+        // 鼠标移入移出方法
+        $scope.mouseenter = function () {
+          this.myStyle.background = "green"
+
+        }
+        $scope.mouseleave = function () {
+          this.myStyle.background = "red"
+        }
+
+        $scope.persons = [
+          {username:'kobe',age:39},
+          {username:'kobe2',age:39},
+          {username:'kobe3',age:39},
+          {username:'kobe4',age:39},
+          {username:'kobe5',age:39},
+          {username:'kobe6',age:39},
+        ]
+      })
+</script>
+</body>
+
+</html>
