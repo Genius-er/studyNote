@@ -17,7 +17,7 @@
             height: 800px;
             background-color: silver;
 
-            /* 解决父子间上外边距折叠 */
+            /* 解决父子间上外边距折叠（开启BFC） */
             overflow: hidden;
         }
 
@@ -32,7 +32,7 @@
             background-color: #bbffaa;
 
             /* transition: all 2s; */
-            /* 
+            /*
                 过渡（transition）
                     - 通过过渡可以指定一个属性发生变化时的切换方式
                     - 通过过渡可以创建一些非常好的效果，提升用户的体验
@@ -68,7 +68,7 @@
             */
             /* transition-timing-function: steps(2,end); */
 
-            /* 
+            /*
                 transition-delay: ; 过渡效果的延迟
                     等待响应时间后再执行过渡
             */

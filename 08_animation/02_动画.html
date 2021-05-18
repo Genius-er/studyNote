@@ -39,7 +39,7 @@
 
             /* animation-delay: 2s; */
 
-            /* animation-timing-function: ease; 
+            /* animation-timing-function: ease;
                     默认值是ease，慢速开始，先加速，再减速
                         linear 匀速运动
                         ease-in 加速运动
@@ -55,7 +55,7 @@
                                 end，在时间结束时执行过渡（默认值）
                                 start 在时间开始时执行过渡 */
 
-            /* 
+            /*
             animation-iteration-count 动画执行的次数
                 可选值：
                     次数
@@ -63,8 +63,8 @@
             */
             animation-iteration-count:3;
 
-            /* 
-                animation-direction 
+            /*
+                animation-direction
                     指定动画运行的方向
                     可选值：
                         默认值 normal 从from 向 to 运行 每次都是这样
@@ -75,7 +75,7 @@
             */
             animation-direction: alternate-reverse;
 
-            /* 
+            /*
             animation-play-state 设置动画的执行状态
                 可选值：
                     running 默认值 动画执行
@@ -84,13 +84,13 @@
             animation-play-state: paused;
 
 
-            /* 
+            /*
             animation-fill-mode 动画的填充模式
                 可选值：
                     none： 默认值，动画执行完毕之后回到原来的位置
-                    backwards 停到动画结束的位置，不会回去、
-                    backwards 动画延时等待时，元素就会处于动画开始状态
-                    both 结合了backwards和backwards
+                    forwards 停到动画结束的位置，不会回去、
+                    backwards 动画延时等待时，元素就会处于动画开始状态（即延时时间也算进duration中）
+                    both 结合了backwards和backwards（停到动画结束的位置，延时时间也算进duration中）
             */
             animation-fill-mode: none;
 
@@ -104,10 +104,10 @@
             margin-left: 700px;
         }
 
-        /* 
+        /*
             动画
                 动画和过渡类似，都是可以实现一些动态的效果
-                    不同的是过渡需要再某个属性发生变化时才会触发
+                    不同的是过渡需要在某个属性发生变化时才会触发
                     动画可以自动触发动态效果
 
                 设置动态效果，必须先要设置一个关键帧，关键帧设置了动画执行每一个步骤
@@ -123,7 +123,7 @@
             to{
                 margin-left:700px;
             }
-            
+
         }
     </style>
 </head>
