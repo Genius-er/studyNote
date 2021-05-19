@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <script>
-        /* 
+        /*
             DOM查询
                 document调用（返回元素节点）
                     getElementById()
@@ -14,6 +14,14 @@
                     getElementsByTagName()
                     getElementsByClassName()
                         不支持IE8及以下浏览器
+
+                    document.querySelector(".box1 div");
+                    用CSS选择器字符串作为参数，可以根据选择器查询对象
+                    支持IE8浏览器,解决不支持getElementsByClassName()的情况
+                    该方法总会返回唯一一个子元素，如果满足条件的元素有多个，只会返回第一个
+
+                    document.querySelectorAll(".box1 div");
+                        返回查询的所有元素，返回类数组
 
                 元素节点（element）调用，属性或方法
                     子节点
@@ -24,7 +32,7 @@
                         element.firstChild 可以获取当前元素的第一个子节点（包括元素间的空白文本）
                         element.firstElementChild 可以获取当前元素的第一个子元素（不会包括空白的）
                             不支持IE8及以下浏览器
-                    
+
                     父节点和兄弟节点
                         element.parentNode
                         element.previousSibling （也会包括空白）
@@ -33,7 +41,7 @@
                         element.nextSibling （也会包括空白）
                         element.nextElementSibling （不包括空白）
 
-                
+
             获取body标签
                 方法一：
                     var body = document.getElementByTagName("body")[0];
@@ -53,22 +61,10 @@
                 另一种方法：
                     var all = document.getElementByTagName("*");
 
-
-                document.querySelector(".box1 div");
-                    用CSS选择器字符串作为参数，可以根据选择器查询对象
-                    支持IE8浏览器,解决不支持getElementsByClassName()的情况
-                    该方法总会返回唯一一个子元素，如果满足条件的元素有多个，只会返回第一个
-
-                document.querySelectorAll(".box1 div");
-                    返回查询的所有元素，返回类数组
-
-            
-
-
          */
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>

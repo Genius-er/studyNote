@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <script>
-        /* 
+        /*
             Object 对象（引用数据类型）
                 对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性
 
@@ -18,7 +18,7 @@
                     2、宿主对象
                         - 由Js的运行环境提供的对象，目前来见主要指的是浏览器提供的对象
                         - 比如BOM DOM
-                    
+
                     3、自定义对象
                         - 由开发人员自己创建的对象
 
@@ -35,12 +35,12 @@
          var obj = new Object();
 
 
-        //  像obj中添加一个name属性
+        //  向obj中添加一个name属性
         obj.name = "孙悟空";
 
         // 读取对象中的属性
         //  如果读取对象中没有的属性，不会报错，而是返回undefined
-        console.log(obj.name);
+        // console.log(obj.name);
 
         // 修改属性值
         obj.name = "猪八戒";
@@ -49,10 +49,10 @@
         // 语法：delete 对象.属性名
         delete obj.name;
 
-        console.log(obj);
+        // console.log(obj);
 
 
-        /* 
+        /*
             属性名
                 对象的属性名不强制要求遵守标识符的规范
                     什么乱七八糟的名字都可以使用
@@ -68,13 +68,13 @@
                         中括号中可以传递参数
          */
 
-         /* 
+         /*
             属性值
                 可以是任意的数据类型
                     甚至可以是对象
           */
 
-        /* 
+        /*
             in 运算符
                 - 可以检查一个对象中是否含有指定属性
                     如果有返回true
@@ -83,7 +83,7 @@
          */
 
 
-        /* 
+        /*
             对象字面量
                 用来创建一个对象
                 可以在创建的同时加入值
@@ -93,12 +93,12 @@
                     name:"猪八戒",
                     age:28,
                     gender:"男"}
-                
+
 
          */
 
-        
-        /* 
+
+        /*
             枚举对象中的属性
                 语法：
                     for（var 变量 in 对象）{
@@ -110,18 +110,17 @@
          */
 
 
-         /* 
+         /*
             使用工厂的方法创建对象
                 创建对象封装到function中
                 使用工厂方法创建的对象，使用的构造函数都是Object
                     区分不开
-                
+
           */
 
-        /* 
+        /*
             构造函数
-                使用工厂方法创建的对象，使用的构造函数都是Object
-                    区分不开
+                使用工厂方法创建的对象，使用的构造函数都是Object，区分不开
                 构造函数就是一个普通的函数，创建方式和普通函数没有区别
                 不同的是构造函数习惯上首字母大写
                 调用方式也不同，构造函数要用new调用
@@ -136,14 +135,14 @@
                 可以使用 instanceof 运算符检查一个对象是否是一个类的实例
                 所有对象都是Object的实例
          */
-        // function Person(name,age){
-        //     this.name = name;
-        //     this.age = age
-        // }
-        // var per = new Person("孙悟空",18);
-        // console.log(per)
+        /*function Person(name,age){
+            this.name = name;
+            this.age = age
+        }
+        var per = new Person("孙悟空",18);
+        console.log(per)
 
-        // console.log(per instanceof Person)
+        console.log(per instanceof Person)*/
 
         /*  在构造函数里创建方法
                 在Person构造函数中，为每个对象添加一个sayName方法
@@ -167,7 +166,7 @@
         // console.log(per instanceof Person)
         // per.sayName();
 
-        /* 
+        /*
             原型 prototype
                 我们创建的每一个函数，解析器都会向函数中添加一个属性prototype
                     这个属性对应一个对象，这个对象就是原型对象
@@ -188,40 +187,39 @@
                     不会污染全局作用域，以后共有的部分都可以添加到原型对象中（最推荐）
 
          */
-         function MyClass(){
-                
-            }
-       
+        /* function MyClass(){
+
+         }
+
         var mc = new MyClass();
         console.log(mc.__proto__);
-        console.log(mc.__proto__ == MyClass.prototype);
-
-        
-        // function Person(name,age){
-        //     proto
-        //     this.name = name;
-        //     this.age = age;
-        //     this.sayName = sayName
-        // }
-        // Person.prototype.sayName = function(){
-        //         alert(this.name)
-        //     }
-        // var per = new Person("孙悟空",18);
-        // console.log(per)
-
-        // console.log(per instanceof Person)
-        // per.sayName();
-
-  
+        console.log(mc.__proto__ == MyClass.prototype); // true*/
 
 
-        
+        function Person(name,age){
+            //prototype;//解析器都会向函数中添加一个属性prototype,不用自己写
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.sayName = function(){
+                alert(this.name)
+        }
+        var per = new Person("孙悟空",18);
+        console.log(per)
+        console.log(per.__proto__ === Person.prototype) // true
+        console.log(per instanceof Person) // true
+        per.sayName();
+
+
+
+
+
 
 
 
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>

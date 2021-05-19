@@ -6,26 +6,26 @@
     <title>Document</title>
 
     <script>
-        /* 
+        /*
             强制类型转换
                 - 指将一个数据类型强制转换为其他的数据类型
                 - 类型转换主要指，将其他的数据类型，转换为
                     String Number Boolean
         */
 
-        /* 
+        /*
             将其他数据类型转换为String
                 方式一：
-                    -调用被转换数据类型的toString（）方法
+                    -调用被转换数据类型的toString()方法
                     - 该方法不会改变原变量，该方法有返回值
-                    - 但是注意：null和undefined这两个值没有toString（）方法
+                    - 但是注意：null和undefined这两个值没有toString()方法
                         如果调用，会报错
 
                 方式二：
-                    - 调用String（）函数，并将被转换的类型的值作为参数，会返回字符串
-                    - 使用String（）函数做强制转换时，
-                        对于Number和Boolean实际就是调用toString（）方法
-                        但是对于null和undefined，就不会调用toString（）方法
+                    - 调用String()函数，并将被转换的类型的值作为参数，会返回字符串
+                    - 使用String()函数做强制转换时，
+                        对于Number和Boolean实际就是调用toString()方法
+                        但是对于null和undefined，就不会调用toString()方法
                             它会将null转为"null",将undefined转换为"undefined"
 
         */
@@ -43,22 +43,22 @@
         /* a = null;
         a = a.toString(a); */
 
-        /* 
+        /*
             将其他数据类型转换为Number
                 转换方式一：
-                    使用Number（）函数
+                    使用Number()函数
                         1、正常数值
                         2、如果不是数字则会返回NaN
                         3、空串或全是空格，返回0
                         4、true返回1，false返回0
                         5、null返回0
                         6、undefined返回NaN
-                
+
                 转换方式二：
                     - 这种方式专门用来对付字符串
-                    - parseInt（）把一个字符串转换为一个整数
+                    - parseInt()把一个字符串转换为一个整数
                         - 将一个字符串中的有效的整数内容取出来（从左开始识别）
-                    - parseFloat（）把一个字符串转换为浮点数
+                    - parseFloat()把一个字符串转换为浮点数
                         - 将一个字符串中的有效的浮点数内容取出来（从左开始识别）
                     - 如果对非String使用该方法会先转换为String（直接加引号的转换），然后再操作
         */
@@ -78,9 +78,9 @@
         // console.log(a);
         // console.log(typeof a);
 
-        /* 
+        /*
             将其他数据类型转换为Boolean
-                - 使用Boolean（）函数
+                - 使用Boolean()函数
                     - 数字 --> Boolean
                         - 除了0和NaN，取余都是true
                     - 字符串 --> Boolean
@@ -91,11 +91,17 @@
                     将a转换为Boolean
         */
 
+        var a = "524"
+        console.log(!a); //false
+        console.log(typeof !a) // boolean
+        console.log(!!a) // true
+        console.log(typeof !!a) // boolean
 
-        
+
+
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>

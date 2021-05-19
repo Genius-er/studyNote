@@ -6,12 +6,11 @@
     <title>Document</title>
 
     <script>
-        /* 
+        /*
             解析器在调用函数每次都会向函数内部传递进一个隐含的参数
                 这个隐含参数就是this，this指向的是一个对象
                     这个对象称为函数执行的上下文对象
                         谁调用这个方法，this就指向谁
-                            以函数调用，this指向window
 
             函数的方法
                 call()和apply()
@@ -25,17 +24,17 @@
             console.log(this);
         }
 
-        // fun(123,456)
-
         // 创建一个对象
         var obj = {
             name:"孙悟空",
             sayName:fun
         }
-        obj.sayName();
+        fun.call(obj,12,56)
+        fun.apply(obj,[12,56])
+        // obj.sayName(12,56);
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>

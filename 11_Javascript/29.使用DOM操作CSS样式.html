@@ -16,7 +16,7 @@
     </style>
 
     <script>
-        /* 
+        /*
             通过JS修改元素的样式
                 语法：元素.style.样式名 = 样式值;
 
@@ -27,7 +27,7 @@
 
                 注意：
                     如果CSS的样式名含有-
-                        这种名称在CSS中不合法
+                        这种名称在JS中不合法
                             要改成驼峰命名法
          */
 
@@ -48,12 +48,12 @@
             };
 
 
-            /* 
+            /*
             读取元素当前样式（样式表的样式也可以）
                 方式一：
                     语法： 元素.currentStyle.样式名
                         只有IE支持
-                其他浏览器：
+                方式二（其他浏览器）：
                     getComputedStyle()
                         不支持IE8及以下浏览器
                     这个方法是window的方法，可以直接使用
@@ -68,13 +68,13 @@
                 // alert(box1.currentStyle.height);
                 var obj = getComputedStyle(box1,null);
                 alert(obj.height)
-                
+
             };
 
 
             // 兼容性的方法
             function getStyle(obj,name){
-                /* 
+                /*
                     注意要加window
                         没加是变量
                             会一直往外找，没找到报错
@@ -89,15 +89,17 @@
                 else {
                     return obj.currentStyle[name];
                 }
-                
+
             }
-            /* 
+
+
+            /*
             通过currentStyle和getComputedStyle()获取的样式都是只读的，不可以修改、
                 如果要修改必须使用style属性
             */
 
 
-            /* 
+            /*
                 element.clientWidth
                     返回元素的可见宽度。
                 element.clientHeight
@@ -134,23 +136,23 @@
                     这等式说明垂直滚动条到底了
 
 
-                
+
              */
             var btn4 = document.getElementById("btn4");
             btn4.onclick = function(){
 
                 alert(box1.clientWidth);
-                
+
             };
-            
+
         };
 
-        
 
 
-    
 
-        
+
+
+
     </script>
 </head>
 <body>
