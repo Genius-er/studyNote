@@ -14,19 +14,28 @@
         #s1{
             background-color: yellow;
         }
+
+        div {
+            width: 140px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fbe;
+        }
     </style>
 
     <script>
-        /* 
+        /*
             事件的冒泡（Bubble）
                 - 所谓冒泡指的是事件的向上传导，当后代元素上的事件被触发，其祖先元素的相同事件也会被触发
                 - 在开发中大部分情况冒泡都是有用的，如果不希望事件冒泡可以通过事件对象来取消冒泡
          */
-        window,onload = function(){
+        window.onload = function(){
             var s1 = document.getElementById("s1");
 
             s1.onclick = function(event){
-                event = event || window.event; 
+                event = event || window.event;
                 alert("我是span的单击响应函数")
 
                 // 取消冒泡
@@ -45,7 +54,32 @@
 
 
             var btn01 = document.getElementById("btn01");
-            btn01.setPointerCapture
+
+            // 捕获指针事件
+            btn01.onclick = function(e){
+                console.log("点击了btn01")
+                btn01.setPointerCapture(e.pointerId);
+            }
+
+            function beginSliding(e) {
+                slider.onpointermove = slide;
+                // slider.setPointerCapture(e.pointerId);
+            }
+
+            function stopSliding(e) {
+                slider.onpointermove = null;
+                slider.releasePointerCapture(e.pointerId);
+            }
+
+            function slide(e) {
+                slider.style.transform = `translate(${e.clientX - 70}px)`;
+            }
+
+            const slider = document.getElementById('slider');
+
+            slider.onpointerdown = beginSliding;
+            slider.onpointerup = stopSliding;
+
 
         };
     </script>
@@ -57,5 +91,7 @@
     </div>
 
     <button id="btn01">我是按钮</button>
+
+    <div id="slider">SLIDE ME</div>
 </body>
 </html>
