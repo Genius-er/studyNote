@@ -24,7 +24,7 @@
 
     <script>
         window.onload = function(){
-            /* 
+            /*
                 拖拽box1元素
                     - 拖拽流程
                         1、按下鼠标开始拖拽
@@ -46,9 +46,9 @@
                 var ol = event.clientX - box1.offsetLeft;
                 var ot = event.clientY - box1.offsetTop;
 
-                
+
                 // 为document绑定一个onmousemove事件
-                document.onmousemove = function(event){     
+                document.onmousemove = function(event){
                     event = event || window.event;
                     // 鼠标移动拖拽元素
                     // 获取鼠标的坐标
@@ -61,7 +61,7 @@
 
                 };
 
-                
+
                 // 为document绑定一个onmouseup()
                 document.onmouseup = function(){
                     // 鼠标松开，元素固定在当前位置
@@ -73,22 +73,22 @@
                     box1.releaseCapture && box1.releaseCapture();
                 };
 
-                /* 
-                    当拖拽一个网页中的内容时，浏览器会默认区搜索引擎中搜索内容
-                        此时会导致拖拽功能的异常，这个时浏览器提供的默认行为
+                /*
+                    当拖拽一个网页中的内容时，浏览器会默认去搜索引擎中搜索内容
+                        此时会导致拖拽功能的异常，这个是浏览器提供的默认行为
                         如果不希望发生这个行为，则可以通过return false来取消默认行为
 
                     但是这招对IE8不起作用
                         用捕获解决setCapture()和releaseCapture()问题（这两个方法只有IE支持）
                  */
                 return false;
-                
+
             };
             drag(box2);
         };
 
         // 提取拖拽元素的方法
-        /* 
+        /*
             参数：
                 obj
          */
@@ -103,9 +103,9 @@
                 var ol = event.clientX - obj.offsetLeft;
                 var ot = event.clientY - obj.offsetTop;
 
-    
+
             // 为document绑定一个onmousemove事件
-            document.onmousemove = function(event){     
+            document.onmousemove = function(event){
                 event = event || window.event;
                 // 鼠标移动拖拽元素
                 // 获取鼠标的坐标
@@ -118,7 +118,7 @@
 
             };
 
-    
+
             // 为document绑定一个onmouseup()
             document.onmouseup = function(){
                 // 鼠标松开，元素固定在当前位置
@@ -130,7 +130,7 @@
                 obj.releaseCapture && obj.releaseCapture();
             };
 
-            /* 
+            /*
                 当拖拽一个网页中的内容时，浏览器会默认区搜索引擎中搜索内容
                     此时会导致拖拽功能的异常，这个时浏览器提供的默认行为
                     如果不希望发生这个行为，则可以通过return false来取消默认行为
@@ -139,7 +139,7 @@
                     用捕获解决setCapture()和releaseCapture()问题（这两个方法只有IE支持）
             */
             return false;
-            
+
             };
         }
     </script>

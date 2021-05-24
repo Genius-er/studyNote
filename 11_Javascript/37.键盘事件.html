@@ -7,17 +7,17 @@
 
     <script>
         window.onload = function(){
-            /* 
+            /*
                 onkeydown
                     - 键盘被按下
                     - 对于onkeydown来说，如果一直按着某个按键不松手，事件会一直触发
-                    - 当onkeydowm连续触发时，第一次和第二次之间会间隔稍微长一点，其他会非常快
+                    - 当onkeydown连续触发时，第一次和第二次之间会间隔稍微长一点，其他会非常快
                         这种设计防止误操作（这个特性可以利用定时调用改变）
                         把卡顿的这个行为放进定时调用的回调函数中就可以解决
                 onkeyup
                     - 键盘被松开
 
-                
+
                 键盘事件一般是绑定给可以获取焦点的对象或者是document
              */
 
@@ -25,19 +25,17 @@
                 // console.log("按键被按下");
                 event = event || window.event;
 
-                /* 
+                /*
                     可以通过event.keyCode来获取按键的编码
                         通过它可以判断哪个按键被按下
                     除了keyCode
                         还有：
                             altKey
                             ctrlKey
-                            shiftKey    
+                            shiftKey
                                 - 这三个判断是否按下，按下为true
                  */
                 console.log(event.keyCode);
-
-
             };
             document.onkeyup = function(){
                 console.log("按键被松开");
@@ -48,12 +46,12 @@
             inp.onkeydown = function(){
                 console.log("按键被按下");
 
-                /* 
+                /*
                     在文本框中输入内容是浏览器的默认行为
                         return false;可以关闭默认行为
                             可以使用这个特性来让有些键不能输入，来个if判断
                  */
-                // return false;
+                return false;
             };
         };
 
