@@ -26,7 +26,7 @@
             var box = document.getElementById("box");
 
             btn01.onclick = function(){
-                /* 
+                /*
                     通过style修改元素的样式，每修改一个样式，浏览器就要重新渲染一次页面
                         这样执行的性能是比较差的，而且这种形式当我们修养修改多个样式时，也不太方便
                  */
@@ -34,24 +34,24 @@
                 box.style.height = "200px";
                 box.style.backgroundColor = "yellow"; */
 
-                /* 
+                /*
                     希望一行代码，同时修改多个样式
                  */
 
                 // 修改box的class属性
-                /* 
+                /*
                     我们可以通过元素的class属性来间接修改样式
                         这样一来，只需要修改一次，即可同时修改多个样式
                             浏览器只需要重新渲染页面一次，性能比较好
                                 并且这种方式，可以让表现和行为进一步分离
                  */
                 box.className += " b2";
-                
+
             };
         };
 
         // 定义一个函数，用来向一个元素添加指定的class属性值
-        /* 
+        /*
             参数：
                 obj 要添加class属性的元素
                 cn 要添加的class值
@@ -68,7 +68,7 @@
             var reg = new RegExp("/\\b"+cn+"\\b");
 
             return reg.test(obj.className);
-            
+
         }
 
         // 删除obj指定class值
@@ -76,11 +76,11 @@
             var reg = new RegExp("/\\b"+cn+"\\b");
 
             obj.className = obj.className.replace(reg,"");
-            
+
         }
 
         // 切换一个类
-        /* 
+        /*
             如果元素中有该类，则删除
             没有则添加
          */
@@ -93,7 +93,7 @@
             }else{
                 addClass(obj.cn)
             }
-            
+
         }
     </script>
 </head>

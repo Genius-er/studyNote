@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <script>
-        /* 
+        /*
             JSON
                 - JS对象只有JS自己认识，其他语言不认识
                 - JSON就是特殊格式的字符串，这个字符串可以被任意的语言识别
@@ -20,7 +20,7 @@
                             var obj = '{"name":"孙悟空","age":18,"gender":"男"}';
                         2、数组[]
                             var obj = '[1,2,3,"hello",true]';
-                    
+
                     JSON中允许的值：
                         1、字符串
                         2、数值
@@ -33,13 +33,13 @@
        var arrJson = '[1,2,3,"hello",true]';
 
 
-       /* 
+       /*
             将JSON字符串转换为JS中的对象
                 在JS中，为我们提供了一个工具类JSON
                 这个对象可以帮助我们将一个JSON转换为JS对象，也可以将一个对象转换为json
        */
 
-       /* 
+       /*
             json --> js对象
                 JSON.parse()
                     - 可以将json转换为js对象
@@ -53,17 +53,18 @@
        console.log(obj1);
        console.log(obj2);
 
-       /* 
+       /*
             js对象 --> json
                 JSON.stringify()
                     - 可以将js对象转换为json
-                    - 他需要一个js对象字符串作为参数
+                    - 他需要一个js对象作为参数
        */
+       console.log(typeof obj1);
        console.log(typeof JSON.stringify(obj1));
        console.log(JSON.stringify(obj1));
        console.log(JSON.stringify(obj2));
 
-       /* 
+       /*
         JSON在IE7及以下不支持
             解决方式：
                 引入外部的js文件来处理
@@ -80,10 +81,11 @@
       var str = "alert('字符串JS');"
     //   eval(str);
       var obj3 = eval("("+json+")");
+      console.log(typeof obj3)
       console.log(obj3);
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>
