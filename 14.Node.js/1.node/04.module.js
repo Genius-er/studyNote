@@ -32,7 +32,7 @@ var a = 10;
  			- 当前模块所在文件夹的完整路径
 
 * */
-//console.log(global.a);
+// console.log(global.a);
 
 /*
 	arguments.callee

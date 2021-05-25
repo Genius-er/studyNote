@@ -25,9 +25,9 @@ var str = "Hello 尚硅谷";
 //一个汉字占用三个字节
 //将一个字符串保存到buffer中
 var buf = Buffer.from(str);
-// console.log(buf.length); //占用内存的大小
-// console.log(str.length);//字符串的长度
-// console.log(buf);
+console.log(buf.length); //占用内存的大小
+console.log(str.length);//字符串的长度
+console.log(buf);
 
 
 //创建一个指定大小的buffer
@@ -46,7 +46,7 @@ buf2[2] = 0xaa;
 buf2[3] = 255;
 console.log(buf2);
 
-//只要数字在控制台或页面中输出一定是10进制
+//只要数字在控制台或页面中用toString输出一定是10进制
 console.log(buf2[2]);
 console.log(buf2[2].toString(16));
 

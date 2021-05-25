@@ -4,8 +4,8 @@ var fs = require('fs');
     fs.existsSync(path)
         - 检查一个文件是否存在
 */
-// var isExists = fs.existsSync('a.mp3');
-// console.log(isExists);
+var isExists = fs.existsSync('a.mp3');
+console.log(isExists);
 
 
 /*
@@ -14,9 +14,9 @@ var fs = require('fs');
         - 获取一个文件的状态
         - 它会返回一个对象，这个对象中保存了当前对象状态的相关信息
 */
-// fs.stat('a.mp3',function (err,stats) {
-//     console.log(arguments);
-// });
+fs.stat('a.mp3',function (err,stats) {
+    console.log(arguments);
+});
 
 
 /*
@@ -36,11 +36,11 @@ var fs = require('fs');
         - 读取一个目录的目录结构
             files是一个字符串数组，每一个元素就是一个文件夹或文件的名字
 */
-// fs.readdir('.',function (err,fliles) {
-//     if(!err){
-//         console.log(fliles)
-//     }
-// })
+fs.readdir('.',function (err,fliles) {
+    if(!err){
+        console.log(fliles)
+    }
+})
 
 
 /*
@@ -50,7 +50,7 @@ var fs = require('fs');
     fs.truncateSync(path)
         - 截断文件,将文件设置成指定字节大小
 */
-// fs.truncateSync('hello2.txt',9);
+fs.truncateSync('hello2.txt',9);
 
 
 /*
@@ -66,7 +66,7 @@ var fs = require('fs');
     fs.rmdirSync(path)
         - 删除目录
 */
-// fs.rmdirSync('hello')
+fs.rmdirSync('hello')
 
 /*
     fs.rename(oldPath, newPath, callback)
@@ -77,11 +77,11 @@ var fs = require('fs');
             newPath 新的路径
             callback 回调函数
 */
-// fs.rename('a.mp3','c.mp3',function (err) {
-//     if (!err){
-//         console.log('修改成功')
-//     }
-// })
+fs.rename('a.mp3','c.mp3',function (err) {
+    if (!err){
+        console.log('修改成功')
+    }
+})
 
 /*
 * – fs.watchFile(filename[, options], listener)
