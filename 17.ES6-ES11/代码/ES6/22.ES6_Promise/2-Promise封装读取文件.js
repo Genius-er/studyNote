@@ -11,7 +11,7 @@ const fs = require('fs');
 
 //3. 使用 Promise 封装
 const p = new Promise(function(resolve, reject){
-    fs.readFile("./resources/为学.mda", (err, data)=>{
+    fs.readFile("./resources/为学.md", (err, data)=>{
         //判断如果失败
         if(err) reject(err);
         //如果成功

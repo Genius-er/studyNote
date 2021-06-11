@@ -22,11 +22,14 @@
         });
 
         //调用 promise 对象的 then 方法(执行了resolve就执行第一个函数，执行了reject就执行第二个函数)
-        p.then(function(value){
-            console.log(value);
-        }, function(reason){
-            console.error(reason);
-        })
+        p.then(
+            function(value){
+                console.log(value);
+            },
+            function(reason){
+                console.error(reason);
+            }
+        )
     </script>
 </body>
 </html>
