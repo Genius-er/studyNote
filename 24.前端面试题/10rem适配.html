@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>rem适配</title>
+    <style type="text/css">
+        html,body{
+            height: 500%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 8rem;
+            height: 8rem;
+            background: deeppink;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button id="btn">按钮</button>
+</body>
+<script type="text/javascript">
+    //获取屏幕宽度
+    var width = document.documentElement.clientWidth;
+
+    //获取html
+    var htmlNode = document.querySelector('html');
+
+    //设置html字体大小
+    htmlNode.style.fontSize = width/16 + 'px';
+
+    /**
+     * 节流函数
+     * @param fn 要节流的函数
+     * @param delay 规定的时间
+     */
+    function throttle(fn,delay){
+        // 记录上一次函数触发的时间
+        var lastTime = 0;
+
+        // 这样可以让lastTime一直保持第一次的时间
+        return function () {
+            // 记录当前函数触发的时间
+            var nowTime = Date.now();
+
+            if (nowTime - lastTime > delay) {
+                fn()
+                // 同步时间
+                lastTime = nowTime
+            }
+        };
+    }
+
+    document.onscroll = throttle(function () {
+        console.log('scroll事件被触发了' + Date.now())
+    },5000)
+
+    /**
+     * 防抖函数
+     * @param fn 需要防抖的函数
+     * @param delay 延迟时间
+     * @returns {function(): void}
+     */
+    function debounce(fn,delay) {
+        // 记录上一次的延时器
+        var timer = null;
+        return function () {
+            // 清除上一次延时器
+            clearTimeout(timer)
+            // 重新设置新的延时器
+            timer = setTimeout(function () {
+                fn.apply(this);
+            },delay)
+        }
+    }
+
+    document.getElementById('btn').onclick = debounce(function () {
+        console.log('点击事件被触发了' + Date.now())
+    },1000)
+
+
+</script>
+</html>

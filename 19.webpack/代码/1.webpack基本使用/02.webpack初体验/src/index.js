@@ -17,7 +17,10 @@
 */
 // import './index.css';
 
+// 使用ES6的module
 import data from './data.json';
+
+
 console.log(data);
 
 function add(x, y) {

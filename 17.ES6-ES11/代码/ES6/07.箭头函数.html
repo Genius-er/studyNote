@@ -23,29 +23,29 @@
         // console.log(result);
 
 
-        //1. this 是【静态的】. this 始终指向函数声明时所在作用域下的 this 的值
+        // //1. this 是【静态的】. this 始终指向函数声明时所在作用域下的 this 的值
         // function getName(){
         //     console.log(this.name);
         // }
         // let getName2 = () => {
         //     console.log(this.name);
         // }
-
-        //设置 window 对象的 name 属性
+        //
+        // // 设置 window 对象的 name 属性
         // window.name = '尚硅谷';
         // const school = {
         //     name: "ATGUIGU"
         // }
-
-        //直接调用
+        //
+        // // 直接调用
         // getName();
         // getName2();
+        //
+        // // call 方法调用（改变不了箭头函数的this）
+        // getName.call(school); // ATGUIGU
+        // getName2.call(school); // 尚硅谷
 
-        //call 方法调用（改变不了箭头函数的this）
-        // getName.call(school);
-        // getName2.call(school);
-
-        //2. 【不能】作为构造实例化对象
+        // //2. 【不能】作为构造实例化对象
         // let Person = (name, age) => {
         //     this.name = name;
         //     this.age = age;
@@ -68,9 +68,10 @@
 
             //2) 【省略花括号】, 当代码体只有一条语句的时候, 此时 return 必须省略
             // 而且语句的执行结果就是函数的返回值
-            let pow = n => n * n;
-                
-            console.log(pow(8));
+            // let pow = n => n * n;
+            //
+            // console.log(pow(8));
+
 
     </script>
 </body>

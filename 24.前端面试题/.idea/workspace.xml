@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="187695f2-d409-4ce2-bca7-feb98145bc7b" name="Default Changelist" comment="" />
+    <list default="true" id="187695f2-d409-4ce2-bca7-feb98145bc7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,12 +12,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1sTRLlzQKguGakv3Ftr4r0vBZqD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,10 +33,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Node.js.去掉数组中重复的数据.js">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\大学四年\大四\code\24.前端面试题" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.15nodejs时间轮询机制.js">
+    <configuration name="15nodejs时间轮询机制.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/15nodejs时间轮询机制.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="冒泡排序.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/冒泡排序.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -40,8 +57,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.去掉数组中重复的数据.js" />
-        <item itemvalue="Node.js.反转数组.js" />
+        <item itemvalue="Node.js.15nodejs时间轮询机制.js" />
         <item itemvalue="Node.js.冒泡排序.js" />
       </list>
     </recent_temporary>
@@ -57,6 +73,8 @@
       <workItem from="1620894562090" duration="2904000" />
       <workItem from="1621247856794" duration="595000" />
       <workItem from="1621302118967" duration="5256000" />
+      <workItem from="1623033034816" duration="6219000" />
+      <workItem from="1623042936347" duration="3688000" />
     </task>
     <servers />
   </component>
