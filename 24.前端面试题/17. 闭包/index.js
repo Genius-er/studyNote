@@ -21,42 +21,28 @@
 *   2. 用完闭包要及时清除(销毁)
 * */
 
-// function fun() {
-//   var count = 1;
-//   function fun2() {
-//     console.log(count);
-//   }
-//
-//   fun2();
-// }
-//
-// fun();
+/*function fun() {
+  var count = 1;
+  function fun2() {
+    console.log(count);
+  }
 
-// 闭包的应用场景
-// function fun() {
-//   var count = 1;
-//   return function () {
-//     count++;
-//     console.log(count);
-//   }
-// }
-//
-// var fun2 = fun();
-// fun2(); // 2
-// fun2(); // 3
-//
+  fun2();
+}
 
+fun();*/
 
-
-
-
-
-
-
-
-
-
-
+// 闭包的应用场景（内部的函数返回到外部）
+/*function fun() {
+  var count = 1;
+  return function () {
+    count++;
+    console.log(count);
+  }
+}
+var fun2 = fun();
+fun2(); // 2
+fun2(); // 3*/
 
 
 

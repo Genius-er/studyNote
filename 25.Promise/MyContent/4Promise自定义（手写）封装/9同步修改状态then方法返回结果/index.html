@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            resolve("Ok")
+        });
+        // console.log(p)
+
+        const res = p.then(value => {
+            console.log(value);
+            /*return new Promise((resolve, reject) => {
+                // resolve("Success")
+                // reject("on no")
+
+            });*/
+            // 抛出异常
+            throw "FAIL"
+        }, reason=>{
+            console.warn(reason);
+        })
+
+        console.log(res)
+
+    </script>
+</body>
+</html>

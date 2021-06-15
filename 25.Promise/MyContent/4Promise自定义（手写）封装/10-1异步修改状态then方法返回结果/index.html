@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve("Ok")
+                reject("Error")
+            },5000);
+
+        });
+        // console.log(p)
+
+        const res = p.then(value => {
+            console.log(value);
+            // return "ok"
+            throw "ERROR"
+        }, reason=>{
+            console.warn(reason);
+            throw "ERROR"
+        })
+
+        console.log(res)
+
+    </script>
+</body>
+</html>
