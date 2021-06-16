@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("3秒")
+            },3000);
+        });
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("2秒")
+            },2000);
+        });
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("1秒")
+            },1000);
+        });
+        let p4 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("5秒")
+            },5000);
+        });
+
+        let p5 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject("3秒")
+            },3000);
+        });
+        let p6 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject("2秒")
+            },2000);
+        });
+        let p7 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject("1秒")
+            },1000);
+        });
+        let p8 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject("5秒")
+            },5000);
+        });
+
+        let result = Promise.race([p, p2, p3, p4]);
+        console.log(result)  // 返回一秒的情况
+
+        let result2 = Promise.race([p5, p6, p7, p8]);
+        console.log(result2) // 返回一秒的情况
+    </script>
+</body>
+</html>

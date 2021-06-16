@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        async function main() {
+            // 1.如果返回值是一个非Promise类型数据，则返回的是promise对象为成功的，值为返回值
+            // return 521;
+
+            //2.如果返回值是一个Promise类型数据，则返回的是promise对象由返回的promise对象决定
+            // return new Promise((resolve, reject) => {
+            //     // resolve("OK")
+            //     reject("ERROR")
+            // });
+
+            // 3.如果抛出一个异常，返回的promise对象则为失败，值为异常值
+            throw "YICHANG"
+        }
+
+        let result = main();
+        console.log(result)
+    </script>
+
+</body>
+</html>

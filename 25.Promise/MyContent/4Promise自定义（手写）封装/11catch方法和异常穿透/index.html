@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            // resolve("Ok");
+            // reject("Error")
+            setTimeout(() => {
+                resolve("Ok")
+                // reject("Error")
+            },1000);
+
+        });
+        // console.log(p)
+
+        // 异常穿透
+        /*p.then(value => {
+            console.log(111)
+        }).then(value => {
+            console.log(222)
+        }).then(value => {
+            console.log(333)
+        }).catch(reason => {
+            console.warn(reason)
+        })*/
+
+        // 值传递 输出222 333
+        p.then().then(value => {
+            console.log(222)
+        }).then(value => {
+            console.log(333)
+        }).catch(reason => {
+            console.warn(reason)
+        })
+
+        // catch 方法实现
+        /*let res = p.catch(reason => {
+            console.warn(reason)
+        })
+
+        console.log(res)*/
+
+
+    </script>
+</body>
+</html>
