@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_namespace模式</title>
+</head>
+<body>
+<script type='text/javascript' src='module1.js'></script>
+<script type='text/javascript'>
+  obj.foo();
+  // 对象里面的属性还是能被操作，不安全
+  obj.msg = 'NBA';
+  obj.foo();
+</script>
+</body>
+</html>

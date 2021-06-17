@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!--    引入axios，也可以用npm下载-->
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
 </head>
 <body>
+    <button id="btn">点击获取段子</button>
+    <button id="btn2">点击获取段子</button>
     <script>
-        //axios
         function sendAJAX(url){
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
@@ -19,7 +23,7 @@
                         //判断成功
                         if(xhr.status >= 200 && xhr.status < 300){
                             //成功的结果
-                            resolve(xhr.response);
+                            resolve(xhr);
                         }else{
                             reject(xhr.status);
                         }
@@ -29,13 +33,26 @@
         }
 
         //段子接口地址 https://api.apiopen.top/getJoke
-        let btn = document.querySelector('#btn');
 
+
+        // 使用原生AJAX
+        let btn = document.querySelector('#btn');
         btn.addEventListener('click',async function(){
             //获取段子信息
             let duanzi = await sendAJAX('https://api.apiopen.top/getJoke');
             console.log(duanzi);
         });
+
+
+        //使用 axios 发送请求
+        /*axios返回的是Promise对象，可以用async 和 await 两种语法结合可来回去请求结果*/
+        let btn2 = document.querySelector('#btn2');
+        btn2.addEventListener('click', async () => {
+            // 发送请求
+            let duanzi2 = await axios.get('https://api.apiopen.top/getJoke')
+            console.log(duanzi2)
+        });
+
     </script>
 </body>
 </html>

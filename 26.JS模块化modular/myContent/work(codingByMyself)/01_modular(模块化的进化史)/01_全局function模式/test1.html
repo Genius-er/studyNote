@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_全局function模式</title>
+</head>
+<body>
+<script type='text/javascript' src='module1.js'></script>
+<script type='text/javascript'>
+  foo();
+  bar();
+
+  // 忘记在module1文件里定义了msg，又进行了重新定义覆盖，造成命名冲突
+  msg = 'NBA';
+  foo()
+</script>
+</body>
+</html>
