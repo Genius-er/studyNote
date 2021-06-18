@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--
+使用seajs:
+  1. 引入sea.js库
+  2. 如何定义导出模块 :
+    define()
+    exports
+    module.exports
+  3. 如何依赖模块:
+    require()
+  4. 如何使用模块:
+    seajs.use('./js/modules/main.js')
+-->
+<script type='text/javascript' src='js/libs/sea.js'></script>
+<script type='text/javascript'>
+  /*注意执行顺序
+  * require模块的时候先会执行模块文件
+  * 异步引入会在宏任务执行完才会执行异步的回调这个微任务
+  * */
+    seajs.use('./js/modules/main.js');
+</script>
+</body>
+</html>
