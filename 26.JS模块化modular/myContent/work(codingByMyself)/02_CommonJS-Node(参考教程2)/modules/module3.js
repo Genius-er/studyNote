@@ -9,4 +9,4 @@ exports.bar = function () {
 
 exports.arr = [2, 5, 6, 6, 5, 4, 8, 9];
 
-// 不能在使用module.exports = {}进行暴露，会覆盖之前的
+// 不能再使用module.exports = {}进行暴露，会覆盖之前的
