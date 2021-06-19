@@ -53,8 +53,7 @@ function Promise(executor){
 Promise.prototype.then = function(onResolved, onRejected){
     const self = this
 
-
-
+    // 新增 -------------------------------------------------------
     // 判断回调函数，用来解决不传第二个参数时实现【异常穿透】
     if(typeof onRejected !== 'function'){
         onRejected = reason => {
@@ -66,7 +65,7 @@ Promise.prototype.then = function(onResolved, onRejected){
     if(typeof onResolved !== 'function'){
         onResolved = value => value;
     }
-
+    // -------------------------------------------------------------
 
     return new Promise((resolve, reject) => {
         // 封装函数
@@ -112,8 +111,9 @@ Promise.prototype.then = function(onResolved, onRejected){
     });
 
 }
-
+// 新增 --------------------------------------------------------
 // 添加 catch 方法
 Promise.prototype.catch = function (onRejected) {
     return this.then(undefined, onRejected);
 }
+// ----------------------------------------------------------------

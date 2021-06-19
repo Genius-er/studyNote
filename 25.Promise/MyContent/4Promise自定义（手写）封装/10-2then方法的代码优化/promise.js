@@ -53,6 +53,7 @@ function Promise(executor){
 Promise.prototype.then = function(onResolved, onRejected){
     const self = this
     return new Promise((resolve, reject) => {
+
         // 封装函数
         function callback(type) {
             try { // 【这一层try。。。catch好像可以不用，new的时候已经有】// 获取回调函数的执行结果
@@ -87,7 +88,6 @@ Promise.prototype.then = function(onResolved, onRejected){
             this.callbacks.push({
                 onResolved:function () {
                     callback(onResolved);
-
                 },
                 onRejected:function () {
                     callback(onRejected);
@@ -95,5 +95,4 @@ Promise.prototype.then = function(onResolved, onRejected){
             });
         }
     });
-
 }

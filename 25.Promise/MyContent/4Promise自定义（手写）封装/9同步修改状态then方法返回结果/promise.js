@@ -53,6 +53,7 @@ function Promise(executor){
 Promise.prototype.then = function(onResolved, onRejected){
     return new Promise((resolve, reject) => {
         // 调用回调函数
+        // 这里的this是调用then的promise，不是then返回新new的promise
         if (this.PromiseState === "fulfilled"){
             try { // 【这一层try。。。catch好像可以不用，new的时候已经有】
                 // 获取回调函数的执行结果
@@ -90,7 +91,6 @@ Promise.prototype.then = function(onResolved, onRejected){
             }catch (e) {
                 reject(e)
             }
-            onRejected(this.PromiseResult)
         }
         // 判断pending状态
         if(this.PromiseState === "pending"){
@@ -101,5 +101,4 @@ Promise.prototype.then = function(onResolved, onRejected){
             });
         }
     });
-
 }

@@ -91,7 +91,6 @@ Promise.prototype.then = function(onResolved, onRejected){
             }catch (e) {
                 reject(e)
             }
-            onRejected(this.PromiseResult)
         }
         // 判断pending状态
         if(this.PromiseState === "pending"){
@@ -99,7 +98,6 @@ Promise.prototype.then = function(onResolved, onRejected){
             this.callbacks.push({
                 onResolved:function () {
                     try {
-                        // console.log("success")
                         // 执行成功的回调函数
                         let result = onResolved(self.PromiseResult)
                         // 判断
@@ -119,7 +117,6 @@ Promise.prototype.then = function(onResolved, onRejected){
                 },
                 onRejected:function () {
                     try {
-                        // console.log("error")
                         // 执行失败的回调函数
                         let result = onRejected(self.PromiseResult);
                         // 判断
@@ -140,5 +137,4 @@ Promise.prototype.then = function(onResolved, onRejected){
             });
         }
     });
-
 }

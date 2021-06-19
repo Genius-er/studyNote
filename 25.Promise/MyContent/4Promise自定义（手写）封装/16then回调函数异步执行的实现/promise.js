@@ -1,7 +1,5 @@
 
 function Promise(executor){
-
-
     // 添加属性
     this.PromiseState = "pending";
     this.PromiseResult = null
