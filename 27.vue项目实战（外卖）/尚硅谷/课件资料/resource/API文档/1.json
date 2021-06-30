@@ -1,0 +1,267 @@
+{
+    "info": {
+        "_postman_id": "3c521130-9159-9051-a6ff-9426befcb36b",
+        "name": "硅谷外卖-vue项目",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "根据经纬度获取位置详情",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "name",
+                            "value": "aa",
+                            "type": "text"
+                        },
+                        {
+                            "key": "pwd",
+                            "value": "123",
+                            "type": "text"
+                        },
+                        {
+                            "key": "type",
+                            "value": "boss",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "http://localhost:3000/position/40.10038,116.36867",
+                "description": "#### 请求URL：\r\n\thttp://cangdu.org:8001/v2/pois/:geohash\r\n\r\n#### 示例：\r\n[http://cangdu.org:8001/v2/pois/40.10038,116.36867](http://cangdu.org:8001/v2/pois/31.22967,121.4762)\r\n\r\n#### 请求方式：\r\n\tGET\r\n\r\n#### 参数类型：param\r\n\r\n\t|参数\t\t|是否必选 |类型     |说明\r\n\t|geohash    |Y       |string   |经纬度\r\n\r\n#### 返回示例：\r\n\r\n\t{\r\n\t address: \"上海市黄浦区西藏中路\",\r\n\t city: \"上海市\",\r\n\t geohash: \"31.22967,121.4762\",\r\n\t latitude: \"31.22967\",\r\n\t longitude: \"121.4762\",\r\n\t name: \"黄浦区上海人民广场\"\r\n\t}\r\n"
+            },
+            "response": []
+        },
+        {
+            "name": "获取食品分类列表",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": "http://localhost:3000/index_category",
+                "description": "#### 请求URL：\r\n\thttp://cangdu.org:8001/v2/index_entry\r\n\r\n#### 请求方式：\r\n\tGET\r\n\r\n#### 参数类型：\r\n\t无\r\n\r\n#### 返回示例：\r\n\t[\r\n\t  {\r\n\t    id: 1,\r\n\t    is_in_serving: true,\r\n\t    description: \"0元早餐0起送，每天都有新花样。\",\r\n\t    title: \"预订早餐\",\r\n\t    link: \"\",\r\n\t    image_url: \"/d/49/7757ff22e8ab28e7dfa5f7e2c2692jpeg.jpeg\",\r\n\t    icon_url: \"\",\r\n\t    title_color: \"\",\r\n\t    __v: 0\r\n\t  },\r\n\t  {\r\n\t    id: 65,\r\n\t    is_in_serving: true,\r\n\t    description: \"\",\r\n\t    title: \"土豪推荐\",\r\n\t    image_url: \"/d/49/7757ff22e8ab28e7dfa5f7e2c2692jpeg.jpeg\",\r\n\t    link: \"\",\r\n\t    icon_url: \"\",\r\n\t    title_color: \"\",\r\n\t    __v: 0\r\n\t  },\r\n\t  ... 共n条数据\r\n\t]"
+            },
+            "response": []
+        },
+        {
+            "name": "根据经纬度获取商铺列表",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": {
+                    "raw": "http://localhost:3000/shops?latitude=40.10038&longitude=116.36867",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "shops"
+                    ],
+                    "query": [
+                        {
+                            "key": "latitude",
+                            "value": "40.10038"
+                        },
+                        {
+                            "key": "longitude",
+                            "value": "116.36867"
+                        }
+                    ]
+                },
+                "description": "#### 请求URL：\r\n\thttp://cangdu.org:8001/shopping/restaurants\r\n\r\n#### 示例：\r\n[http://cangdu.org:8001/shopping/restaurants?latitude=40.10038&longitude=116.36867](http://cangdu.org:8001/shopping/restaurants?latitude=40.10038&longitude=116.36867)\r\n\r\n#### 请求方式：\r\n\tGET\r\n\r\n#### 参数类型：query\r\n\t|参数          |是否必选  |类型     |说明|\r\n\t|latitude      |Y        |string   |纬度|\r\n\t|longitude     |Y       |string    |经度|\r\n\r\n\r\n#### 返回示例：\r\n\t[\r\n\t  {\r\n\t    name: \"肯德基\",\r\n\t    address: \"上海市宝山区淞宝路155弄18号星月国际商务广场1层\",\r\n\t    id: 1,\r\n\t    latitude: 31.38098,\r\n\t    longitude: 121.50146,\r\n\t    location: [\r\n\t      121.50146,\r\n\t      31.38098\r\n\t    ],\r\n\t    phone: \"1232313124324\",\r\n\t    category: \"快餐便当/简餐\",\r\n\t    supports: [\r\n\t      {\r\n\t        description: \"已加入“外卖保”计划，食品安全有保障\",\r\n\t        icon_color: \"999999\",\r\n\t        icon_name: \"保\",\r\n\t        id: 7,\r\n\t        name: \"外卖保\",\r\n\t        _id: \"591bec73c2bbc84a6328a1e5\"\r\n\t      }\r\n\t    ],\r\n\t    status: 0,\r\n\t    recent_order_num: 615,\r\n\t    rating_count: 389,\r\n\t    rating: 1.6,\r\n\t    promotion_info: \"他依然有人有人有人有人有人\",\r\n\t    piecewise_agent_fee: {\r\n\t      tips: \"配送费约¥5\"\r\n\t    },\r\n\t    opening_hours: [\r\n\t      \"8:30/20:30\"\r\n\t    ],\r\n\t    license: {\r\n\t      catering_service_license_image: \"\",\r\n\t      business_license_image: \"\"\r\n\t    },\r\n\t    is_new: true,\r\n\t    is_premium: true,\r\n\t    image_path: \"/img/shop/15c1513a00615.jpg\",\r\n\t    identification: {\r\n\t      registered_number: \"\",\r\n\t      registered_address: \"\",\r\n\t      operation_period: \"\",\r\n\t      licenses_scope: \"\",\r\n\t      licenses_number: \"\",\r\n\t      licenses_date: \"\",\r\n\t      legal_person: \"\",\r\n\t      identificate_date: null,\r\n\t      identificate_agency: \"\",\r\n\t      company_name: \"\"\r\n\t    },\r\n\t    float_minimum_order_amount: 20,\r\n\t    float_delivery_fee: 5,\r\n\t    distance: \"19.5公里\",\r\n\t    order_lead_time: \"40分钟\",\r\n\t    description: \"好吃的\",\r\n\t    delivery_mode: {\r\n\t      color: \"57A9FF\",\r\n\t      id: 1,\r\n\t      is_solid: true,\r\n\t      text: \"蜂鸟专送\"\r\n\t    },\r\n\t    activities: [\r\n\t      {\r\n\t        icon_name: \"减\",\r\n\t        name: \"满减优惠\",\r\n\t        description: \"满30减5，满60减8\",\r\n\t        icon_color: \"f07373\",\r\n\t        id: 1,\r\n\t        _id: \"591bec73c2bbc84a6328a1e7\"\r\n\t      }\r\n\t    ],\r\n\t  }\r\n\t]"
+            },
+            "response": []
+        },
+        {
+            "name": "根据关键字搜索商家列表",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": {
+                    "raw": "http://localhost:3000/search_shops?keyword=test&geohash=40.10038,116.36867",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "search_shops"
+                    ],
+                    "query": [
+                        {
+                            "key": "keyword",
+                            "value": "test"
+                        },
+                        {
+                            "key": "geohash",
+                            "value": "40.10038,116.36867"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "用户名密码登陆",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "name",
+                            "value": "aaa",
+                            "type": "text"
+                        },
+                        {
+                            "key": "pwd",
+                            "value": "123",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "http://localhost:3000/login_pwd"
+            },
+            "response": []
+        },
+        {
+            "name": "发送短信验证码",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": {
+                    "raw": "http://localhost:3000/sendcode?phone=13716962779",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "sendcode"
+                    ],
+                    "query": [
+                        {
+                            "key": "phone",
+                            "value": "13716962779"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "手机号验证码登陆",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "phone",
+                            "value": "13716962779",
+                            "type": "text"
+                        },
+                        {
+                            "key": "code",
+                            "value": "342144",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "http://localhost:3000/login_sms"
+            },
+            "response": []
+        },
+        {
+            "name": "根据会话获取用户信息",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "phone",
+                            "value": "13716962779",
+                            "type": "text"
+                        },
+                        {
+                            "key": "code",
+                            "value": "342144",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "http://localhost:3000/userinfo"
+            },
+            "response": []
+        },
+        {
+            "name": "一次性验证码",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": "http://localhost:3000/captcha"
+            },
+            "response": []
+        },
+        {
+            "name": "用户登出",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": "http://localhost:3000/logout"
+            },
+            "response": []
+        }
+    ]
+}
