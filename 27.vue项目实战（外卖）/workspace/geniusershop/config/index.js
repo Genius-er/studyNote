@@ -10,6 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+
     // 设置代理，解决跨域请求
     proxyTable: {
       '/api':{ // 匹配所有以 '/api' 开头的请求路径
